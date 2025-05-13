@@ -1,0 +1,106 @@
+site_name: S4L Plugin Framework Documentation
+site_description: Documentation for sim4life simulator plugins
+site_author: Sim4Life Plugin Framework Team
+
+# The following settings ensure proper path resolution for GitHub Pages
+site_url: https://yourusername.github.io/s4l-plugins-documentation/
+# Uncomment and customize if your repo is in a subfolder
+# docs_dir: docs
+
+theme:
+  name: material
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - toc.integrate
+    - search.suggest
+    - search.highlight
+    - content.tabs.link
+    - content.code.annotation
+    - content.code.copy
+  language: en
+  palette:
+    - scheme: default
+      toggle:
+        icon: material/toggle-switch-off-outline
+        name: Switch to dark mode
+      primary: indigo
+      accent: indigo
+    - scheme: slate 
+      toggle:
+        icon: material/toggle-switch
+        name: Switch to light mode
+      primary: indigo
+      accent: indigo
+  icon:
+    repo: fontawesome/brands/github
+
+# Update these URLs with your actual GitHub repository information
+repo_url: https://github.com/yourusername/s4l-plugins-documentation
+repo_name: s4l-plugins-documentation
+
+nav:
+  - Home: index.md
+  - Getting Started:
+    - Installation: getting-started/installation.md
+    - Quick Start: getting-started/quick-start.md
+  - Plugin Structure:
+    - Overview: plugin-structure/overview.md
+    - Entry Points: plugin-structure/entry-points.md
+    - Tree Structure: plugin-structure/tree-structure.md
+  - Creating a Plugin:
+    - Using Cookiecutter: creating-a-plugin/using-cookiecutter.md
+    - Creating a Simulation Class: creating-a-plugin/creating-simulation.md
+    - Defining Settings: creating-a-plugin/defining-settings.md
+    - Property Types: creating-a-plugin/property-types.md
+    - Drag and Drop Support: creating-a-plugin/drag-and-drop.md
+  - Simulation Models:
+    - Overview: simulation-models/overview.md
+    - Physics Models: simulation-models/physics-models.md
+    - Validation: simulation-models/validation.md
+  - Solver Implementation:
+    - Writing a Solver: solver-implementation/writing-solver.md
+    - API Models: solver-implementation/api-models.md
+    - Implementing Main Solver: solver-implementation/main-solver.md
+  - Result Extractors:
+    - Overview: extractors/overview.md
+    - Creating an Extractor: extractors/creating-extractor.md
+    - VTK Integration: extractors/vtk-integration.md
+  - API Reference:
+    - Core Classes: api-reference/core-classes.md
+
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - admonition
+  - pymdownx.details
+  - attr_list
+  - md_in_html
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.arithmatex:
+      generic: true
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/yourusername
+  javascript:
+    - js/mathjax.js
+    - https://polyfill.io/v3/polyfill.min.js?features=es6
+    - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+
+extra_css:
+  - css/custom.css
+
+plugins:
+  - search
+  - mkdocstrings
