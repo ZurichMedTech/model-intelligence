@@ -1,149 +1,51 @@
+## Getting Started
+
+To begin, you need to start the Sim4Life Framework application.
+
+- **On s4l-lite.io:**  
+  Click the **New** button to go to the service page.  
+  ![New Button in s4l-lite.io](../assets/new_framework.png)
+
+- **On sim4life.io and sim4life.science:**  
+  Go to the **APPS** tab and click on the **Sim4Life Framework** tile.  
+  ![Sim4Life Framework Tile](../assets/app_framework.png)
+
+In both cases, you can then click on **Create Project** to start a new plugin project.  
+![Create Project Overview](../assets/app_overview.png)
+
+Once the application has started, you will see the familiar Sim4Life user interface. In the toolbar, look for the puzzle piece icon—this opens the Plugin Manager, where you can install existing simulator plugins. In the Simulator tab, you’ll notice a placeholder icon labeled “New Simulation” ![Simulation Tab](../assets/simulation_tab.png). When you create your own plugin, your simulation will appear here.
+
+---
+
 # Quick Start Guide
 
 This guide will help you get started with creating your first Sim4Life plugin using our framework.
 
 ## Creating a New Plugin
 
-The quickest way to create a new plugin is to use our cookiecutter template:
+The quickest way to create a new plugin is to use our cookiecutter template embeeded in a vs code extensgion
 
-```bash
-# Install cookiecutter if you haven't already
-pip install cookiecutter
 
-# Create a new plugin from template
-cookiecutter https://gitlab.com/sim4life/plugins/template.git
-```
 
-Follow the prompts to configure your plugin with the desired name, package structure, and features.
+Let's start the integrated development environment (IDE) and create your first plugin using a template. Follow these steps:
 
-## Plugin Structure
+1. Open the burger menu and select **Open Notebooks** ![Open Notebooks](../assets/burger_notebooks.png) This will launch JupyterLab in a new browser tab.
+2. In the JupyterLab launcher, click the **VS Code** icon ![VS Code Launcher](../assets/launcher.png) This will open Visual Studio Code in a new browser tab.
+3. The Visual Studio Code environment comes pre-installed with Python extensions and a dedicated Sim4Life extension ![VS Code Extensions](../assets/vscode.png).
+4. Click on the Sim4Life extension to access a set of tools specifically designed to support plugin development ![Sim4Life Extension](../assets/s4l_extension.png).
 
-After creating your plugin, you'll have a directory structure similar to this:
+The Sim4Life extension provides several useful features for plugin development:
 
-```
-my-plugin/
-├── LICENSE
-├── manifest.json          # Plugin metadata for Sim4Life
-├── README.md              # Documentation
-├── setup.py               # Package installation
-├── integration/           # Integration assets
-│   └── simulator_icon.png # Icon for your plugin
-├── src/                   # Source code
-│   └── myplugin/          # Your package
-│       ├── __init__.py
-│       ├── register.py    # Plugin registration point
-│       ├── controller/    # Business logic
-│       ├── model/         # Data models
-│       └── solver/        # Simulation solvers
-└── tests/                 # Unit tests
-```
+- **Create New Plugin:** Launches a form based on a cookiecutter template to help you create a new plugin.
+- **Reload Application:** Restarts the application so that any changes you made to your plugin become available.
+- **Enable Python Debugger:** Opens ports on the Sim4Life core application, allowing you to connect a debugger for advanced troubleshooting.
+- **Run Pyright:** Runs the static type checker on your plugin to help catch errors early.
 
-## Configuring Your Plugin
+Let's take a closer look at the **Create New Plugin** feature. When you select this option, a form will appear ![Create New Plugin](../assets/new_plugin.png). Fill in the required information according to your needs and follow the prompts after clicking **Create Plugin**.
 
-The main configuration for your plugin is in the `manifest.json` file:
+If everything goes smoothly, you should see a new entry in the Simulation tab under "New Simulation" ![New Heat Plugin](../assets/new_heat_plugin.png). Additionally, VS Code will automatically open in the folder where your plugin's source code resides ![VS Code Plugin Code](../assets/vs_code_plugin_code.png).
 
-```json
-{
-  "name": "My Simulation Plugin",
-  "version": "0.1.0",
-  "description": "A simulation plugin for Sim4Life",
-  "author": "Your Name",
-  "email": "your.email@example.com",
-  "entryPoints": {
-    "simulation": "myplugin.register:register_simulation"
-  }
-}
-```
-
-## Implementing a Basic Simulation
-
-1. **Define Simulation Settings**
-
-   Edit `src/myplugin/model/setup_settings.py` to define the inputs for your simulation:
-
-   ```python
-   from sim4life.plugins.schema import Field, FieldType
-   from sim4life.plugins.settings import SettingsBase
-
-   class MySimulationSettings(SettingsBase):
-       """Settings for my simulation."""
-       
-       input_value = Field(
-           field_type=FieldType.FLOAT,
-           default=1.0,
-           min_value=0.0,
-           max_value=100.0,
-           description="Input value for the simulation"
-       )
-   ```
-
-2. **Implement Simulation Logic**
-
-   Edit `src/myplugin/model/simulation.py` to implement your simulation:
-
-   ```python
-   from sim4life.plugins.simulation import SimulationBase
-   from .setup_settings import MySimulationSettings
-
-   class MySimulation(SimulationBase):
-       """My first simulation implementation."""
-       
-       settings_class = MySimulationSettings
-       
-       def run(self):
-           """Run the simulation."""
-           # Access settings via self.settings
-           input_value = self.settings.input_value
-           
-           # Implement your simulation logic here
-           result = input_value * 2
-           
-           # Return results
-           return {"result": result}
-   ```
-
-3. **Register Your Simulation**
-
-   Edit `src/myplugin/register.py` to register your simulation with Sim4Life:
-
-   ```python
-   from sim4life.plugins.registry import SimulationRegistry
-   from .model.simulation import MySimulation
-
-   def register_simulation(registry: SimulationRegistry):
-       """Register simulations with Sim4Life."""
-       registry.register_simulation(
-           id="my-simulation",
-           name="My Simulation",
-           description="My first simulation for Sim4Life",
-           simulation_class=MySimulation
-       )
-   ```
-
-## Testing Your Plugin
-
-Run the tests to verify your implementation:
-
-```bash
-cd my-plugin
-pytest
-```
-
-## Installing Your Plugin
-
-Install your plugin in development mode:
-
-```bash
-cd my-plugin
-pip install -e .
-```
-
-## Running Your Plugin in Sim4Life
-
-1. Start Sim4Life
-2. Go to "Plugins" in the menu
-3. Select "Install Plugin" and navigate to your plugin directory
-4. Your simulation should now be available in the Simulations menu
+The plugin is installed in edit mode, and since it is located in the `work/workspace` folder, it will persist across restarts of the same project. However, it is good practice to sync your new plugin with a GitHub repository to ensure your work is safely backed up and version controlled.
 
 ## Next Steps
 

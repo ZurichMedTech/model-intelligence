@@ -32,7 +32,7 @@ The framework follows a Model-View-Controller (MVC) pattern to separate simulati
 ## Key Features
 
 - **Tree-based UI Structure**: Organize simulation components in an intuitive tree structure
-- **Property Panels**: Automatically generate parameter input panels for simulation configuration
+- **From Views**: Automatically generate form views for simulation configuration and options
 - **Drag-and-Drop Geometry Support**: Easily associate geometry with simulation components
 - **Solver API**: Streamlined data transfer between UI and numerical solvers
 - **Extractor Framework**: Powerful result visualization and post-processing capabilities

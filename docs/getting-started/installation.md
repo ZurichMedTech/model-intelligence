@@ -1,105 +1,37 @@
-# Installation
+# Introduction
 
-This guide will walk you through the installation process for the Sim4Life Plugin Framework.
+Welcome to the Sim4Life Plugin Framework documentation.
 
-## Prerequisites
+## Requirements
 
-Before installing the Sim4Life Plugin Framework, ensure you have the following:
+To develop and run plugins with Sim4Life, you need:
 
-- Sim4Life version 7.0 or higher
-- Python 3.8 or higher
-- pip (Python package manager)
+- Appropriate Sim4Life modeling and postprocessing licenses.
+- Basic infrastructure for Python development (API into Sim4Life)
 
-## Installing the Plugin Framework
+## Sim4Life Framework Application
 
-### Option 1: Using pip
+For plugin development and management, we provide a standalone application called **Sim4Life Framework**. This tool allows you to:
 
-The simplest way to install the Sim4Life Plugin Framework is via pip:
+- Develop your own plugins.
+- Install and use plugins from other contributors.
 
-```bash
-pip install sim4life-plugin-framework
-```
+For this purpose, we have made code-server available with pre-installed extensions for Python development, as well as a specialized extension tailored for Sim4Life plugin development.
 
-### Option 2: From Source
+Code-server is a browser-based version of Visual Studio Code that allows you to develop and manage your plugins directly from your web browser, without needing to install any software locally. This makes it easy to get started and ensures a consistent development environment across all platforms.
 
-To install from source:
 
-1. Clone the repository:
-   ```bash
-   git clone https://gitlab.com/sim4life/plugin-framework.git
-   ```
 
-2. Navigate to the cloned directory:
-   ```bash
-   cd plugin-framework
-   ```
+## Availability
 
-3. Install the package in development mode:
-   ```bash
-   pip install -e .
-   ```
+The Sim4Life Framework is available in several Sim4Life platforms:
 
-## Verifying Installation
+- **s4l-lite.io**: The free version of Sim4Life, ideal for getting started.
+- **sim4life.io**: The commercial Sim4Life platform.
+- **sim4life.science**: The academic version for research and education.
 
-To verify the installation, open a Python interpreter and run:
+For information on obtaining an account and accessing these platforms, visit [sim4life.swiss](https://sim4life.swiss).
 
-```python
-import sim4life.plugins
+---
 
-print(sim4life.plugins.__version__)
-```
-
-If the installation was successful, this will print the version number of the installed framework.
-
-## Plugin Development Environment Setup
-
-For plugin development, we recommend setting up a dedicated Python virtual environment:
-
-### Using venv
-
-```bash
-# Create a virtual environment
-python -m venv s4l-plugin-env
-
-# Activate the environment
-# On Windows:
-s4l-plugin-env\Scripts\activate
-# On Linux/macOS:
-source s4l-plugin-env/bin/activate
-
-# Install the framework and development tools
-pip install sim4life-plugin-framework
-pip install pytest pytest-cov
-```
-
-### Using conda
-
-```bash
-# Create a conda environment
-conda create -n s4l-plugin-env python=3.8
-
-# Activate the environment
-conda activate s4l-plugin-env
-
-# Install the framework and development tools
-pip install sim4life-plugin-framework
-conda install pytest pytest-cov
-```
-
-## Plugin Template
-
-To quickly get started with a new plugin, use our plugin template:
-
-```bash
-# Install cookiecutter
-pip install cookiecutter
-
-# Create a new plugin from template
-cookiecutter https://gitlab.com/sim4life/plugins/template.git
-```
-
-Follow the prompts to configure your new plugin.
-
-## Next Steps
-
-Once you have successfully installed the Sim4Life Plugin Framework, proceed to the [Quick Start](quick-start.md) guide to create your first plugin.
+Continue to the [Quick Start](quick-start.md) guide to set up your environment and create your first plugin.
