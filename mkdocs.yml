@@ -42,7 +42,7 @@ repo_name: s4l-plugins-documentation
 nav:
   - Home: index.md
   - Getting Started:
-    - Installation: getting-started/installation.md
+    - Introduction: getting-started/installation.md
     - Quick Start: getting-started/quick-start.md
   - Plugin Structure:
     - Overview: plugin-structure/overview.md
@@ -53,20 +53,12 @@ nav:
     - Defining Settings: creating-a-plugin/defining-settings.md
     - Property Types: creating-a-plugin/property-types.md
     - Drag and Drop Support: creating-a-plugin/drag-and-drop.md
-  - Simulation Models:
-    - Overview: simulation-models/overview.md
-    - Physics Models: simulation-models/physics-models.md
-    - Validation: simulation-models/validation.md
   - Solver Implementation:
     - Writing a Solver: solver-implementation/writing-solver.md
     - API Models: solver-implementation/api-models.md
-    - Implementing Main Solver: solver-implementation/main-solver.md
   - Result Extractors:
     - Overview: extractors/overview.md
     - Creating an Extractor: extractors/creating-extractor.md
-    - VTK Integration: extractors/vtk-integration.md
-  - API Reference:
-    - Core Classes: api-reference/core-classes.md
 
 markdown_extensions:
   - pymdownx.highlight:

@@ -48,6 +48,32 @@ The solver is executed as a separate process with a standardized command-line in
 python -m my_package_name.solver.driver.main -i input_file.json -o output_folder
 ```
 
+You can customize how the solver process is launched by overriding the `solver_backend` method in your simulation class (see [Creating a Plugin](../creating-a-plugin/creating-simulation.md)). By default, this method returns the backend type and no additional configuration:
+
+```python
+def solver_backend(self) -> tuple[SolverBackend, config_type_t | None]:
+    """
+    Specifies which type of solver backend to use for running this simulation.
+    Returns:
+        A tuple containing the solver backend type and optional configuration
+    """
+    return SolverBackend.PROCESS, None
+```
+
+You can partially override this to provide a custom process configuration. For example:
+
+```python
+def solver_backend(self) -> tuple[SolverBackend, config_type_t | None]:
+    config = {
+        "cmd": [source_script, "&&", mpi_prefix, f"/usr/bin/python3", str(solver_entry_point), "-i", str(inputs_dir), "-o", str(outputs_dir)],
+        "cwd": "/my_driver",
+        "env": {"OMP_NUM_THREADS": "1"}
+    }
+    return SolverBackend.PROCESS, config
+```
+
+This allows you to control the command, working directory, and environment variables used to launch the solver process.
+
 Your `main.py` should parse these arguments and handle input/output accordingly:
 
 ```python
@@ -287,60 +313,9 @@ def configure_logging(log_path):
     return logger
 ```
 
-## Testing the Solver
-
-You should test your solver independently from the UI:
-
-```python
-def create_test_input():
-    """Create a test input model for the solver."""
-    sim = api_models.Simulation(
-        setup_settings=api_models.SetupSettings(log_level="info"),
-        material_settings=[
-            api_models.MaterialSettings(
-                xmin=0.0, xmax=10.0,
-                ymin=0.0, ymax=10.0,
-                zmin=0.0, zmax=10.0,
-                thermal_conductivity=1.0
-            )
-        ],
-        source_setings=[
-            api_models.SourceSettings(
-                x=5.0, y=5.0, z=5.0,
-                volumetric_heat_source=100.0
-            )
-        ],
-        boundary_settings=[
-            api_models.BoundarySettings(
-                face="xmin",
-                temperature=0.0
-            )
-        ],
-        grid_settings=api_models.GridSettings(
-            dx=1.0, dy=1.0, dz=1.0
-        ),
-        solver_settings=api_models.SolverSettings(
-            solver_method="jacobi",
-            tolerance=1e-6,
-            max_iter=1000
-        )
-    )
-    return sim
-```
-
-## Performance Considerations
-
-For better performance in your solver:
-
-1. **Vectorize operations** using NumPy to avoid loops where possible
-2. **Pre-allocate arrays** instead of resizing them dynamically
-3. **Profile your code** to identify bottlenecks
-4. **Consider parallel processing** for large-scale simulations
-
 ## Next Steps
 
 After writing your solver, you'll want to:
 
 - [Define API Models](api-models.md): Create the data structures for passing data to your solver
-- [Implement the Main Solver](main-solver.md): Write the core numerical algorithms
 - [Create an Extractor](../extractors/creating-extractor.md): Process and visualize simulation results

@@ -340,4 +340,3 @@ After defining your properties:
 
 - [Define your simulation class](creating-simulation.md) to use these properties
 - [Implement your solver](../solver-implementation/writing-solver.md) to process these properties
-- [Test your plugin](../getting-started/quick-start.md#testing-your-plugin) to verify your property setup

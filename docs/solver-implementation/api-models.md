@@ -300,5 +300,4 @@ When designing API models:
 
 After defining your API models, you'll want to:
 
-- [Implement the Main Solver](main-solver.md): Use your API models in the solver implementation
 - [Create an Extractor](../extractors/creating-extractor.md): Process and visualize simulation results

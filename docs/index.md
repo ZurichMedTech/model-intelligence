@@ -13,16 +13,12 @@ Welcome to the Sim4Life Plugin Framework documentation. This framework enables y
 - :material-code-braces: **Create Your Plugin**  
   [Create your own simulation plugin](creating-a-plugin/using-cookiecutter.md) using cookiecutter templates
 
-- :fontawesome-solid-graduation-cap: **Simulation Models**  
-  [Implement physics models](simulation-models/overview.md) for your simulations
-
 </div>
 
 ## What is Sim4Life Plugin Framework?
 
 The Sim4Life Plugin Framework is an extensible architecture for creating custom physics simulations within the Sim4Life platform. It provides a structured way to:
 
-- Define simulation models with physics-specific parameters
 - Create interactive UI components for simulation setup and configuration 
 - Implement numerical solvers for the simulation equations
 - Visualize and analyze simulation results

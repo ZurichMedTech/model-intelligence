@@ -72,5 +72,3 @@ Once you've created your basic plugin, you can:
 - [Add drag-and-drop support](../creating-a-plugin/drag-and-drop.md)
 - [Implement a custom solver](../solver-implementation/writing-solver.md)
 - [Create data extractors](../extractors/creating-extractor.md)
-
-For more detailed information, see the [API Reference](../api-reference/core-classes.md).
