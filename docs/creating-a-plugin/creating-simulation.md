@@ -273,10 +273,12 @@ When creating your simulation class:
 4. **Document physics equations**: Include the governing equations in comments and help text
 5. **Prioritize extensibility**: Design your simulation to be easily extendable for future features
 
+---
+
 ## Next Steps
 
-Once you've created your simulation class, you'll want to:
-
-- [Define Settings](defining-settings.md): Create settings components for your physics model
-- [Implement Drag and Drop](drag-and-drop.md): Add support for geometry assignment
-- [Write a Solver](../solver-implementation/writing-solver.md): Implement the numerical solver for your physics model
+- [Defining Settings](defining-settings.md)
+- [Drag and Drop](drag-and-drop.md)
+- [Property Types](property-types.md)
+- [Solver Implementation](../solver-implementation/writing-solver.md)
+- [Results Extractors Overview](../extractors/overview.md)

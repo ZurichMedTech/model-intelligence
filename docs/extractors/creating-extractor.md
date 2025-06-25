@@ -11,12 +11,8 @@ Before creating an extractor, ensure you have:
 
 ## Extractor Structure
 
+---
 
 ## Next Steps
 
-Once you have a working extractor, consider:
-
-- Adding more visualization types (cut planes, volume rendering, etc.)
-- Implementing more sophisticated data analysis
-- Creating custom UI widgets for interactive exploration
-- Supporting time-dependent data and animations
+- *End of documentation*

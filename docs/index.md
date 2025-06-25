@@ -11,7 +11,13 @@ Welcome to the Sim4Life Plugin Framework documentation. This framework enables y
   [Learn about the plugin architecture](plugin-structure/overview.md) and organization
 
 - :material-code-braces: **Create Your Plugin**  
-  [Create your own simulation plugin](creating-a-plugin/using-cookiecutter.md) using cookiecutter templates
+  [Create your own simulation plugin](creating-a-plugin/creating-simulation.md) using cookiecutter templates
+
+- :material-cogs: **Solver Implementation**  
+  [Implement your solver](solver-implementation/writing-solver.md) and define API models
+
+- :material-chart-bar: **Result Extractors**  
+  [Extract and visualize results](extractors/overview.md) and create custom extractors
 
 </div>
 
@@ -56,3 +62,14 @@ The heat conduction example demonstrates all core aspects of plugin development:
 ## Getting Started
 
 Ready to start developing? Check out the [Quick Start Guide](getting-started/quick-start.md) to create your first simulation plugin!
+
+---
+
+## Next Steps
+
+- [Installation](getting-started/installation.md)
+- [Quick Start](getting-started/quick-start.md)
+- [Plugin Structure Overview](plugin-structure/overview.md)
+- [Creating a Simulation Plugin](creating-a-plugin/creating-simulation.md)
+- [Solver Implementation](solver-implementation/writing-solver.md)
+- [Results Extractors Overview](extractors/overview.md)

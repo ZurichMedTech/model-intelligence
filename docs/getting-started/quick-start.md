@@ -63,12 +63,11 @@ Additionally, VS Code will automatically open in the folder where your plugin's 
 
 The plugin is installed in edit mode, and since it is located in the `work/workspace` folder, it will persist across restarts of the same project. However, it is good practice to sync your new plugin with a GitHub repository to ensure your work is safely backed up and version controlled.
 
+---
+
 ## Next Steps
 
-Once you've created your basic plugin, you can:
-
-- [Learn more about creating simulations](../creating-a-plugin/creating-simulation.md)
-- [Define additional settings](../creating-a-plugin/defining-settings.md)
-- [Add drag-and-drop support](../creating-a-plugin/drag-and-drop.md)
-- [Implement a custom solver](../solver-implementation/writing-solver.md)
-- [Create data extractors](../extractors/creating-extractor.md)
+- [Plugin Structure Overview](../plugin-structure/overview.md)
+- [Creating a Simulation Plugin](../creating-a-plugin/creating-simulation.md)
+- [Solver Implementation](../solver-implementation/writing-solver.md)
+- [Results Extractors Overview](../extractors/overview.md)

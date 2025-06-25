@@ -292,10 +292,10 @@ class BoundarySettings(HasGeometries):
     # ... other methods for validation and API model conversion ...
 ```
 
+---
+
 ## Next Steps
 
-After implementing drag-and-drop support for your settings components, you'll want to:
-
-- [Write a Solver](../solver-implementation/writing-solver.md): Implement the numerical solver for your simulation
-- [Define API Models](../solver-implementation/api-models.md): Create data transfer objects for the solver
-- [Create an Extractor](../extractors/creating-extractor.md): Implement result visualization and analysis
+- [Property Types](property-types.md)
+- [Solver Implementation](../solver-implementation/writing-solver.md)
+- [Results Extractors Overview](../extractors/overview.md)

@@ -356,10 +356,11 @@ class TimeSettings(TreeItem):
     # ... Property getters, validation, API model conversion ...
 ```
 
+---
+
 ## Next Steps
 
-After defining your settings components, you'll want to:
-
-- [Implement Drag and Drop](drag-and-drop.md): Enable geometry association for your settings
-- [Create a Simulation Manager](../plugin-structure/entry-points.md#registration-module): Handle UI actions for your settings
-- [Define API Models](../solver-implementation/api-models.md): Create data transfer objects for your solver
+- [Drag and Drop](drag-and-drop.md)
+- [Property Types](property-types.md)
+- [Solver Implementation](../solver-implementation/writing-solver.md)
+- [Results Extractors Overview](../extractors/overview.md)

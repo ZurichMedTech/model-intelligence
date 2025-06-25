@@ -199,9 +199,10 @@ When creating your own plugin, you can customize the tree structure by:
 2. Implementing a custom `SimulationBinding` class that maps your components to the tree
 3. Organizing your settings logically based on your simulation's needs
 
+---
+
 ## Next Steps
 
-Now that you understand how the tree structure works, learn about:
-
-- [Creating a Simulation Class](../creating-a-plugin/creating-simulation.md): Define your simulation's core class
-- [Defining Settings](../creating-a-plugin/defining-settings.md): Create settings components for your simulation
+- [Creating a Simulation Plugin](../creating-a-plugin/creating-simulation.md)
+- [Solver Implementation](../solver-implementation/writing-solver.md)
+- [Results Extractors Overview](../extractors/overview.md)

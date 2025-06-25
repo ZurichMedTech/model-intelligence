@@ -296,8 +296,8 @@ When designing API models:
 4. **Validate inputs**: Add validation in the solver to ensure the API models contain valid data
 5. **Version explicitly**: If you need to change API models between versions, consider versioning
 
+---
+
 ## Next Steps
 
-After defining your API models, you'll want to:
-
-- [Create an Extractor](../extractors/creating-extractor.md): Process and visualize simulation results
+- [Results Extractors Overview](../extractors/overview.md)

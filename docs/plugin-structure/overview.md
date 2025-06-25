@@ -69,7 +69,12 @@ When Sim4Life starts, it loads plugins as follows:
 
 > **Tip:** If a runtime error occurs during loading, the plugin will not appear in Sim4Life. Check the **LOGGER** in Sim4Life for error details.
 
-## Learn More
+---
 
-- [Entry Points](entry-points.md): How plugins register with Sim4Life
-- [Tree Structure](tree-structure.md): How the UI tree is built
+## Next Steps
+
+- [Entry Points](entry-points.md)
+- [Tree Structure](tree-structure.md)
+- [Creating a Simulation Plugin](../creating-a-plugin/creating-simulation.md)
+- [Solver Implementation](../solver-implementation/writing-solver.md)
+- [Results Extractors Overview](../extractors/overview.md)

@@ -34,4 +34,10 @@ For information on obtaining an account and accessing these platforms, visit [si
 
 ---
 
-Continue to the [Quick Start](quick-start.md) guide to set up your environment and create your first plugin.
+## Next Steps
+
+- [Quick Start](quick-start.md)
+- [Plugin Structure Overview](../plugin-structure/overview.md)
+- [Creating a Simulation Plugin](../creating-a-plugin/creating-simulation.md)
+- [Solver Implementation](../solver-implementation/writing-solver.md)
+- [Results Extractors Overview](../extractors/overview.md)

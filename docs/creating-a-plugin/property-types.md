@@ -340,3 +340,4 @@ After defining your properties:
 
 - [Define your simulation class](creating-simulation.md) to use these properties
 - [Implement your solver](../solver-implementation/writing-solver.md) to process these properties
+- [Results Extractors Overview](../extractors/overview.md)

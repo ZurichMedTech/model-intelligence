@@ -313,9 +313,9 @@ def configure_logging(log_path):
     return logger
 ```
 
+---
+
 ## Next Steps
 
-After writing your solver, you'll want to:
-
-- [Define API Models](api-models.md): Create the data structures for passing data to your solver
-- [Create an Extractor](../extractors/creating-extractor.md): Process and visualize simulation results
+- [API Models](api-models.md)
+- [Results Extractors Overview](../extractors/overview.md)

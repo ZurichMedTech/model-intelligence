@@ -138,9 +138,11 @@ In addition to the Python entry points, your plugin should include a `manifest.j
 
 This metadata is used to display your plugin in the Sim4Life plugin marketplace, allowing users to discover and install your plugin.
 
+---
+
 ## Next Steps
 
-Now that you understand how plugins are registered, learn about:
-
-- [Tree Structure](tree-structure.md): How the UI tree hierarchy is generated
-- [Creating a Simulation Class](../creating-a-plugin/creating-simulation.md): How to define your own simulation type
+- [Tree Structure](tree-structure.md)
+- [Creating a Simulation Plugin](../creating-a-plugin/creating-simulation.md)
+- [Solver Implementation](../solver-implementation/writing-solver.md)
+- [Results Extractors Overview](../extractors/overview.md)
