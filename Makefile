@@ -31,7 +31,7 @@ $(VENV_DIR):
 
 .PHONY: serve
 serve: ## serves the documentation
-	@$(VENV_DIR)/bin/mkdocs serve
+	@$(VENV_DIR)/bin/mkdocs serve --dev-addr=0.0.0.0:8000 
 
 .PHONY: build
 build: ## build the documentation site
