@@ -1,10 +1,10 @@
 # Defining Settings
 
-Settings components are the building blocks of your simulation's user interface. They allow users to configure various aspects of the simulation through property panels in the S4L interface.
+Settings components are the building blocks of your simulation's user interface. They allow users to configure various aspects of the simulation through property panels in the Sim4Life interface.
 
 ## Types of Settings Components
 
-The S4L Plugin Framework provides several types of settings components:
+The Sim4Life Plugin Framework provides several types of settings components:
 
 1. **Basic Settings**: Simple configuration options like `SetupSettings` and `GridSettings`
 2. **Collection Settings**: Group-based settings like `Materials` and `Sources` that contain multiple items
@@ -12,7 +12,7 @@ The S4L Plugin Framework provides several types of settings components:
 
 ## Creating a Basic Settings Component
 
-Basic settings components inherit from `TreeItem` and provide a property panel:
+Basic settings components inherit from `TreeItem` and provide a Form Views:
 
 ```python
 class GridSettings(TreeItem):
@@ -59,7 +59,7 @@ class GridSettings(TreeItem):
         """
         Provides access to the property group containing editable grid parameters.
         
-        These properties will be displayed in the S4L properties panel when the
+        These properties will be displayed in the Sim4Life properties panel when the
         grid settings are selected in the UI.
         """
         return self._properties
@@ -199,7 +199,7 @@ class MaterialSettings(HasGeometries):
 
 ## Property Types
 
-The S4L framework provides various property types for your settings. For a comprehensive list with detailed examples, see the [Property Types](property-types.md) documentation.
+The Sim4Life framework provides various property types for your settings. For a comprehensive list with detailed examples, see the [Property Types](property-types.md) documentation.
 
 Here are some commonly used property types in settings components:
 
@@ -213,9 +213,9 @@ Here are some commonly used property types in settings components:
 
 Refer to the [Property Types](property-types.md) documentation for a complete reference including collection types, UI control types, and detailed usage examples.
 
-## Creating Custom Property Panels
+## Creating Custom From Views
 
-The property panel is created using `XCoreHeadless.DialogOptions()` and populated with property objects:
+The From Views is created using `XCoreHeadless.DialogOptions()` and populated with property objects:
 
 ```python
 # Create the panel
@@ -240,6 +240,10 @@ enable_feature = XCore.PropertyBool(False)
 enable_feature.Description = "Enable Advanced Features"
 self._properties.Add("enable_feature", enable_feature)
 ```
+
+> **Note:** Always use properties as children of `DialogOptions` rather than directly. The pickling mechanism used for saving and loading simulations does not support raw property objects outside of a `DialogOptions` container.
+
+
 
 ## Handling Property Values
 

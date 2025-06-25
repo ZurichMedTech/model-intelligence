@@ -1,10 +1,10 @@
 # Plugin Entry Points
 
-Entry points are how your plugin integrates with the S4L platform. They define how your plugin is discovered, loaded, and registered with the system.
+Entry points are how your plugin integrates with the Sim4Life platform. They define how your plugin is discovered, loaded, and registered with the system.
 
 ## Setup File Configuration
 
-The primary integration point is defined in your plugin's `setup.py` file. This is where you register your plugin with the S4L framework:
+The primary integration point is defined in your plugin's `setup.py` file. This is where you register your plugin with the Sim4Life framework:
 
 ```python
 from setuptools import find_packages, setup
@@ -29,16 +29,16 @@ setup(
 )
 ```
 
-The key part is the `entry_points` section, which tells S4L:
+The key part is the `entry_points` section, which tells Sim4Life:
 
 1. This package provides a plugin in the `s4l.simulator_plugins` category
 2. The plugin's entry point is the `register` function in the `my_package_name.register` module
 
 ## Registration Module
 
-The `register.py` module is the main connection point between your plugin and S4L. It handles:
+The `register.py` module is the main connection point between your plugin and Sim4Life. It handles:
 
-1. Registering your simulation type with the S4L plugin registry
+1. Registering your simulation type with the Sim4Life plugin registry
 2. Providing factory functions to create UI bindings and managers for your simulation
 
 Here's an example of a typical registration module:
@@ -80,9 +80,9 @@ def create_manager(simulation: SimulationBase) -> ISimulationManager:
 
 def register():
     """
-    Registers all simulation components with the S4L plugin system.
+    Registers all simulation components with the Sim4Life plugin system.
     
-    This function is the main entry point for the plugin and is called by S4L during startup.
+    This function is the main entry point for the plugin and is called by Sim4Life during startup.
     """
     logger.info("Registering My Plugin...")
 
@@ -101,7 +101,7 @@ def register():
 
 ## Registration Process
 
-When S4L starts, it performs the following steps to load your plugin:
+When Sim4Life starts, it performs the following steps to load your plugin:
 
 1. Discovers all entry points in the `s4l.simulator_plugins` category
 2. For each entry point, calls the specified function (in this case, `register()`)
@@ -110,7 +110,7 @@ When S4L starts, it performs the following steps to load your plugin:
    - The `create_binding` factory function to handle UI tree mapping
    - The `create_manager` factory function to handle property panels and UI actions
 
-Once registered, your simulation type becomes available in the S4L interface and users can create new simulations of your type.
+Once registered, your simulation type becomes available in the Sim4Life interface and users can create new simulations of your type.
 
 ## Plugin Manifest
 
@@ -136,7 +136,7 @@ In addition to the Python entry points, your plugin should include a `manifest.j
 }
 ```
 
-This metadata is used to display your plugin in the S4L plugin marketplace, allowing users to discover and install your plugin.
+This metadata is used to display your plugin in the Sim4Life plugin marketplace, allowing users to discover and install your plugin.
 
 ## Next Steps
 

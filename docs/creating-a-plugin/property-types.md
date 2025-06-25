@@ -1,13 +1,13 @@
 <!-- filepath: /home/guidon/devel/src/gitlab/sim4life/plugins/template/documentation/docs/creating-a-plugin/property-types.md -->
 # Property Types
 
-The S4L Plugin Framework supports a wide range of property types to define simulation parameters, settings, and UI elements. This page provides a comprehensive list of available property types with examples of how to use them in your simulation plugins.
+The Sim4Life Plugin Framework supports a wide range of property types to define simulation parameters, settings, and UI elements. This page provides a comprehensive list of available property types with examples of how to use them in your simulation plugins.
 
 ## Core Property Types
 
 The framework provides the following core property types:
 
-| Property Type | Description | S4L Class | Example |
+| Property Type | Description | Sim4Life Class | Example |
 |--------------|------------|-----------|---------|
 | Real Quantity | Floating-point number with units | `XCore.PropertyReal` | Wave speed (m/s), Temperature (K) |
 | Integer | Whole number | `XCore.PropertyInt` | Grid size, Iterations count |
@@ -25,7 +25,7 @@ The framework provides the following core property types:
 
 For representing collections of values:
 
-| Property Type | Description | S4L Class | Example |
+| Property Type | Description | Sim4Life Class | Example |
 |--------------|------------|-----------|---------|
 | Real Tuple | Fixed-length array of real numbers | `XCore.PropertyRealTuple` | Frequency range [min, max, step] |
 | Integer Tuple | Fixed-length array of integers | `XCore.PropertyIntTuple` | Grid dimensions [nx, ny, nz] |
@@ -36,7 +36,7 @@ For representing collections of values:
 
 For user interface controls:
 
-| Property Type | Description | S4L Class | Example |
+| Property Type | Description | Sim4Life Class | Example |
 |--------------|------------|-----------|---------|
 | Group | Container for other properties | `XCore.PropertyGroup` | Material properties group |
 | Button | Clickable button | `XCore.PropertyPushButton` | Calculate, Run simulation |
@@ -274,27 +274,13 @@ class CalculationSettings(TreeItem):
             
             # Update result property
             self._result.Value = result
-            
-            # Show success message
-            XCore.MessageService.ShowMessage(
-                "Calculation", 
-                f"Calculation completed: {input_val}² = {result}"
-            )
-            
-        except Exception as e:
-            # Handle errors
-            XCore.MessageService.ShowMessage(
-                "Error", 
-                f"Calculation failed: {str(e)}", 
-                XCore.eMessageType.kError
-            )
 ```
 
 ### Complex Property
 
 ```python
 # Define a complex property for impedance
-impedance = XCore.PropertyComplex(complex(50.0, 0.0), XCore.Unit("Ohm"))
+impedance = XCore.PropertyComplex(50+0j), XCore.Unit("Ohm"))
 impedance.Description = "Load Impedance"
 impedance.ToolTip = "Complex impedance of the load"
 self._properties.Add("impedance", impedance)

@@ -1,6 +1,6 @@
 # Creating an Extractor
 
-This guide walks you through the process of creating a custom result extractor for your S4L plugin. Extractors are responsible for visualizing and analyzing simulation results, providing users with meaningful insights into the physics simulations.
+This guide walks you through the process of creating a custom result extractor for your Sim4Life plugin. Extractors are responsible for visualizing and analyzing simulation results, providing users with meaningful insights into the physics simulations.
 
 ## Prerequisites
 
@@ -29,12 +29,12 @@ import vtk
 import json
 import numpy as np
 
-# Import S4L post-processing API
+# Import Sim4Life post-processing API
 import S4L.postprocessing as pp
 from S4L.postprocessing import fieldTypes
 
 def create_engine():
-    """Entry point function called by the S4L post-processing system."""
+    """Entry point function called by the Sim4Life post-processing system."""
     return SimulationExtractor()
 
 class SimulationExtractor:
@@ -721,12 +721,12 @@ import json
 import numpy as np
 import logging
 
-# Import S4L post-processing API
+# Import Sim4Life post-processing API
 import S4L.postprocessing as pp
 from S4L.postprocessing import fieldTypes
 
 def create_engine():
-    """Entry point function called by the S4L post-processing system."""
+    """Entry point function called by the Sim4Life post-processing system."""
     return TemperatureExtractor()
 
 class TemperatureExtractor:

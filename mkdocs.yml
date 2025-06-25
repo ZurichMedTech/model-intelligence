@@ -49,7 +49,6 @@ nav:
     - Entry Points: plugin-structure/entry-points.md
     - Tree Structure: plugin-structure/tree-structure.md
   - Creating a Plugin:
-    - Using Cookiecutter: creating-a-plugin/using-cookiecutter.md
     - Creating a Simulation Class: creating-a-plugin/creating-simulation.md
     - Defining Settings: creating-a-plugin/defining-settings.md
     - Property Types: creating-a-plugin/property-types.md

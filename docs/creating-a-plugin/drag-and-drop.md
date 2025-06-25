@@ -1,6 +1,6 @@
 # Drag and Drop Support
 
-One of the most powerful features of the S4L Plugin Framework is the ability to associate geometric entities (like vertices, edges, faces, and bodies) with simulation components through drag-and-drop operations. This page explains how to implement drag-and-drop support for your plugin.
+One of the most powerful features of the Sim4Life Plugin Framework is the ability to associate geometric entities (like vertices, edges, faces, and bodies) with simulation components through drag-and-drop operations. This page explains how to implement drag-and-drop support for your plugin.
 
 ## The HasGeometries Base Class
 
@@ -56,7 +56,7 @@ class SourceSettings(HasGeometries):
 
 ## Allowed Entity Types
 
-The `_get_allowed_entity_types` method specifies which types of geometric entities can be associated with your component. The S4L modeling system provides several entity types:
+The `_get_allowed_entity_types` method specifies which types of geometric entities can be associated with your component. The Sim4Life modeling system provides several entity types:
 
 | Entity Type | Description |
 |-------------|-------------|
@@ -202,35 +202,6 @@ def validate(self) -> bool:
         return False
     
     return True
-```
-
-## Advanced Geometry Processing
-
-For more complex scenarios, you might need to extract specific information from the geometry or process it in custom ways:
-
-```python
-def process_geometries(self):
-    """Process the assigned geometries to extract specialized information."""
-    results = []
-    
-    for geom in self._geometries:
-        if isinstance(geom.entity, xm.Face):
-            face = geom.entity
-            
-            # Calculate face area
-            area = xm.CalculateArea(face)
-            
-            # Get face normal at the center
-            center = xm.GetCenterOfMass(face)
-            normal = xm.CalculateNormal(face, center)
-            
-            results.append({
-                "area": area,
-                "center": center,
-                "normal": normal
-            })
-    
-    return results
 ```
 
 ## Custom Drag and Drop Handlers

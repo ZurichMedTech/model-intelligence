@@ -1,6 +1,6 @@
 # Creating a Simulation Class
 
-The `Simulation` class is the central component of your S4L plugin. It serves as the container for all simulation settings and provides the core functionality for your physics model.
+The `Simulation` class is the central component of your Sim4Life plugin. It serves as the container for all simulation settings and provides the core functionality for your physics model.
 
 ## Simulation Class Structure
 
@@ -17,7 +17,7 @@ class Simulation(SimulationBase):
 
     @classmethod
     def get_simulation_type_name(cls) -> str:
-        """Display name for this simulation type in the S4L interface."""
+        """Display name for this simulation type in the Sim4Life interface."""
         return "My Physics Simulation"
 
     @classmethod
@@ -44,6 +44,7 @@ class Simulation(SimulationBase):
         
         # Schedule the help button connection
         asyncio.get_event_loop().call_soon(self._connect_help)
+        # Note: Using call_soon ensures that the help button connection does not interfere with the initialization process, especially after deserialization from file.
 
     def on_initialize_settings(self) -> None:
         """Create all the settings components for this simulation."""
@@ -65,7 +66,7 @@ Your `Simulation` class must implement several required methods:
 ```python
 @classmethod
 def get_simulation_type_name(cls) -> str:
-    """Returns the display name used in the S4L interface."""
+    """Returns the display name used in the Sim4Life interface."""
     return "My Physics Simulation"
 
 @classmethod
@@ -79,7 +80,7 @@ def get_simulation_icon(cls) -> str:
     return "icons/XSimulatorUI/new_simulation.ico"
 ```
 
-These methods provide basic identification and display information for your simulation type in the S4L interface.
+These methods provide basic identification and display information for your simulation type in the Sim4Life interface.
 
 ### Initialization and Setting Creation
 
@@ -151,6 +152,9 @@ def get_solver_src(self) -> str:
 ```
 
 These methods provide the connections to your solver implementation and result extraction.
+
+> **Note:** At present, only the subprocess backend is supported. This means your solver must have all required third-party libraries available after the plugin is installed via pip. In the future, a remote execution backend using Docker containerization will be introduced to simplify dependency management and execution.
+
 
 ### Validation and API Model Conversion
 
@@ -256,6 +260,8 @@ class WaveSimulation(SimulationBase):
 
     # ... Properties, validation, etc. ...
 ```
+
+> **Note:** Using call_soon ensures that the help button connection does not interfere with the initialization process, especially after deserialization from file.
 
 ## Common Patterns and Best Practices
 

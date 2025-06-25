@@ -69,7 +69,7 @@ The heat conduction model includes:
 
 ## Model-View Separation
 
-The S4L Plugin Framework emphasizes separation between the model (physics implementation) and view (UI representation):
+The Sim4Life Plugin Framework emphasizes separation between the model (physics implementation) and view (UI representation):
 
 ```mermaid
 graph LR

@@ -2,7 +2,7 @@
 
 ## What are Extractors?
 
-Extractors are components of the S4L Plugin Framework that enable visualization and analysis of simulation results. They take raw simulation output data and transform it into meaningful visual representations and quantitative metrics that help users understand the physics being simulated.
+Extractors are components of the Sim4Life Plugin Framework that enable visualization and analysis of simulation results. They take raw simulation output data and transform it into meaningful visual representations and quantitative metrics that help users understand the physics being simulated.
 
 An extractor is essentially a post-processing engine that runs after your simulation completes and performs several key functions:
 
@@ -14,13 +14,13 @@ An extractor is essentially a post-processing engine that runs after your simula
 
 ## The Extractor Pipeline
 
-When a user views simulation results in S4L, the following pipeline is executed:
+When a user views simulation results in Sim4Life, the following pipeline is executed:
 
 ```
 Solver Output Files → Extractor Loading → Data Processing → Visualization → UI Controls
 ```
 
-This process begins automatically when a user opens simulation results in the S4L interface. The extractor is responsible for everything from the second step onward.
+This process begins automatically when a user opens simulation results in the Sim4Life interface. The extractor is responsible for everything from the second step onward.
 
 ## Types of Visualization
 
@@ -33,9 +33,9 @@ Extractors can create various types of visualization objects:
 - **Cut Planes**: Create 2D slices through 3D data
 - **Animations**: Show time-dependent evolution of physical phenomena
 
-## Extractor Integration with S4L
+## Extractor Integration with Sim4Life
 
-Extractors are registered with S4L through a specific API and are automatically discovered when a user loads results from your simulation. The key integration points are:
+Extractors are registered with Sim4Life through a specific API and are automatically discovered when a user loads results from your simulation. The key integration points are:
 
 1. **Entry Point**: A function that creates and returns an extractor engine
 2. **Parameter Handling**: Methods for receiving visualization parameters
@@ -48,13 +48,13 @@ A typical extractor consists of several key components:
 
 ### Entry Point
 
-The entry point is a function named `create_engine` that S4L calls to create an instance of your extractor:
+The entry point is a function named `create_engine` that Sim4Life calls to create an instance of your extractor:
 
 ```python
 import s4l_core.postprocessing as pp
 
 def create_engine():
-    """Entry point called by S4L when loading results."""
+    """Entry point called by Sim4Life when loading results."""
     return MyPluginExtractor()
 ```
 
@@ -144,9 +144,9 @@ When developing extractors, follow these best practices:
 - **Documentation**: Document the meaning and units of visualized quantities
 - **Visual Design**: Use appropriate color maps and scales for different physical quantities
 
-## VTK and S4L Visualization
+## VTK and Sim4Life Visualization
 
-The Visualization Toolkit (VTK) is the core technology used for visualization in S4L. An understanding of VTK is essential for developing effective extractors. VTK provides:
+The Visualization Toolkit (VTK) is the core technology used for visualization in Sim4Life. An understanding of VTK is essential for developing effective extractors. VTK provides:
 
 - **Data Structures**: Efficient representation of grid and point-based data
 - **Visualization Algorithms**: Ready-made algorithms for common visualization tasks
@@ -214,7 +214,7 @@ class MySimulationExtractor:
 
 ## Next Steps
 
-To learn more about developing extractors for your S4L plugin:
+To learn more about developing extractors for your Sim4Life plugin:
 
 - [Creating an Extractor](creating-extractor.md): A detailed guide to implementing extractors
 - [VTK Integration](vtk-integration.md): Learn how to use VTK effectively in your extractors

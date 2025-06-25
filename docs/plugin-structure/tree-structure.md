@@ -1,10 +1,10 @@
 # Tree Structure
 
-One of the most important aspects of the S4L Plugin Framework is the tree-based UI representation of your simulation. This page explains how the tree structure works and how to define the tree hierarchy.
+One of the most important aspects of the Sim4Life Plugin Framework is the tree-based UI representation of your simulation. This page explains how the tree structure works and how to define the tree hierarchy.
 
 ## Tree Hierarchy Overview
 
-The S4L UI represents simulations as a hierarchical tree, with the simulation as the root and various settings components as branches and leaves:
+The Sim4Life UI represents simulations as a hierarchical tree, with the simulation as the root and various settings components as branches and leaves:
 
 ```mermaid
 graph TD

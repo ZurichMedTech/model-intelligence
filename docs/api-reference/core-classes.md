@@ -1,6 +1,6 @@
 # Core Classes
 
-This page documents the core classes that form the foundation of the S4L Plugin Framework.
+This page documents the core classes that form the foundation of the Sim4Life Plugin Framework.
 
 ## Base Classes
 
@@ -10,7 +10,7 @@ The `Simulation` class is the central class in the plugin framework. It represen
 
 ```python
 class Simulation:
-    """Base class for all simulations in the S4L Plugin Framework."""
+    """Base class for all simulations in the Sim4Life Plugin Framework."""
     
     def __init__(self, name: str, description: str):
         """Initialize a new simulation.
@@ -100,7 +100,7 @@ Base class for all settings objects in the plugin framework.
 
 ```python
 class SettingsBase:
-    """Base class for all settings in the S4L Plugin Framework."""
+    """Base class for all settings in the Sim4Life Plugin Framework."""
     
     def __init__(self, name: str):
         """Initialize settings.
@@ -241,11 +241,11 @@ class SimulationManager:
 
 ### SimulationBinding
 
-Binds simulation models to the S4L UI.
+Binds simulation models to the Sim4Life UI.
 
 ```python
 class SimulationBinding:
-    """Binds simulation to S4L UI components."""
+    """Binds simulation to Sim4Life UI components."""
     
     def __init__(self, simulation):
         """Initialize binding.
