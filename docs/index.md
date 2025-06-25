@@ -1,4 +1,4 @@
-# S4L Plugin Framework
+# Sim4Life Plugin Framework
 
 Welcome to the Sim4Life Plugin Framework documentation. This framework enables you to develop custom simulation plugins for the Sim4Life simulation platform.
 

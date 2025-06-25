@@ -4,7 +4,7 @@ The solver is where the actual physics computations happen in your simulation pl
 
 ## Solver Architecture
 
-The S4L Plugin Framework uses a clean separation between the UI model and the solver. This is done through:
+The Sim4Life Plugin Framework uses a clean separation between the UI model and the solver. This is done through:
 
 1. **API Models**: Simple data transfer objects that pass simulation parameters to the solver
 2. **Solver Driver**: The main implementation of your numerical solver
@@ -246,7 +246,7 @@ def save_results(results: dict, output_dir: str) -> None:
 
 ## Using VTK for Output
 
-The S4L framework expects results in VTK format. You can use libraries like PyVista to generate these files:
+The Sim4Life framework expects results in VTK format. You can use libraries like PyVista to generate these files:
 
 ```python
 def save_vtk_rectilinear_grid(data, data_name, grid, output_path):
