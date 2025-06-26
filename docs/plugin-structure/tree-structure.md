@@ -186,6 +186,7 @@ class Materials(Group[MaterialSettings]):
 ```
 
 The `Group` class provides standard functionality for collections, including:
+
 - Adding/removing elements
 - Accessing elements by index
 - Iterating over elements

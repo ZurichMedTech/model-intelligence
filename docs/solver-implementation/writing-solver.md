@@ -29,7 +29,7 @@ graph LR
 
 Your solver implementation should be located in the `solver/driver` package of your plugin:
 
-```
+```bash
 src/
 └── my_package_name/
     └── solver/
@@ -44,7 +44,7 @@ src/
 
 The solver is executed as a separate process with a standardized command-line interface:
 
-```
+```python
 python -m my_package_name.solver.driver.main -i input_file.json -o output_folder
 ```
 

@@ -243,8 +243,6 @@ self._properties.Add("enable_feature", enable_feature)
 
 > **Note:** Always use properties as children of `DialogOptions` rather than directly. The pickling mechanism used for saving and loading simulations does not support raw property objects outside of a `DialogOptions` container.
 
-
-
 ## Handling Property Values
 
 To retrieve property values when needed:

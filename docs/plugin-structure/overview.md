@@ -23,7 +23,7 @@ The framework follows a Model-View-Controller (MVC) pattern:
 
 ## Directory Structure
 
-```
+```bash
 s4l-plugin-heat-conduction/
 ├── LICENSE
 ├── README.md

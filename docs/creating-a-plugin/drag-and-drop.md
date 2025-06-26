@@ -67,6 +67,7 @@ The `_get_allowed_entity_types` method specifies which types of geometric entiti
 | `xm.Group` | A collection of other entities |
 
 Choose the entity types that make sense for your component. For example:
+
 - Material properties typically apply to bodies (volumes)
 - Boundary conditions typically apply to faces (surfaces)
 - Point sources or sensors typically apply to vertices (points)

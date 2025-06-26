@@ -20,8 +20,6 @@ For this purpose, we have made code-server available with pre-installed extensio
 
 Code-server is a browser-based version of Visual Studio Code that allows you to develop and manage your plugins directly from your web browser, without needing to install any software locally. This makes it easy to get started and ensures a consistent development environment across all platforms.
 
-
-
 ## Availability
 
 The Sim4Life Framework is available in several Sim4Life platforms:

@@ -128,8 +128,8 @@ def register_extractor(self) -> pp.PythonModuleAlgorithm:
     """
     return pp.PythonModuleAlgorithm(
         "my_package_name.model.simulation_extractor",
-        0,
-        1,
+        0, # number of inputs
+        1, # number of outputs
     )
 
 def solver_backend(self) -> tuple[SolverBackend, config_type_t | None]:

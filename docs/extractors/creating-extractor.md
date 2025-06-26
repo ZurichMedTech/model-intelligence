@@ -187,5 +187,3 @@ The extractor is designed to be extensible. You can add new output fields or sum
 ## Next Steps
 
 End of documentation.
-
-

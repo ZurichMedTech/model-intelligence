@@ -25,7 +25,7 @@ Welcome to the Sim4Life Plugin Framework documentation. This framework enables y
 
 The Sim4Life Plugin Framework is an extensible architecture for creating custom physics simulations within the Sim4Life platform. It provides a structured way to:
 
-- Create interactive UI components for simulation setup and configuration 
+- Create interactive UI components for simulation setup and configuration
 - Implement numerical solvers for the simulation equations
 - Visualize and analyze simulation results
 
@@ -46,11 +46,10 @@ This documentation uses a heat conduction simulation plugin as a comprehensive e
 $$\nabla \cdot (k \nabla T) + Q = 0$$
 
 Where:
+
 - $T$ is the temperature field
 - $k$ is the thermal conductivity
 - $Q$ is the volumetric heat source
-
-![Heat Conduction Simulation](assets/images/heat_conduction.png)
 
 The heat conduction example demonstrates all core aspects of plugin development:
 
@@ -58,6 +57,8 @@ The heat conduction example demonstrates all core aspects of plugin development:
 - Defining material properties and boundary conditions
 - Implementing a finite difference solver
 - Extracting and visualizing temperature fields and heat flux
+
+![Heat Conduction Simulation](assets/heat_plugin_setup.gif)
 
 ## Getting Started
 

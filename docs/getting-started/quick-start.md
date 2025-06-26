@@ -1,4 +1,4 @@
-## Getting Started
+# Getting Started
 
 To begin, you need to start the Sim4Life Framework application.
 
@@ -21,7 +21,7 @@ When you create your own plugin, your simulation will appear here.
 
 ---
 
-# Quick Start Guide
+## Quick Start Guide
 
 This guide will help you get started with creating your first Sim4Life plugin using our framework.
 
