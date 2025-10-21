@@ -1,9 +1,9 @@
-site_name: S4L Plugin Framework Documentation
-site_description: Documentation for sim4life simulator plugins
-site_author: Sim4Life Plugin Framework Team
+site_name: S4L Modeling Intelligence Documentation
+site_description: Documentation for Sim4Life's Modeling Intelligence features
+site_author: Sim4Life Modeling Intelligence Team
 
 # The following settings ensure proper path resolution for GitHub Pages
-site_url: https://ZurichMedTech.github.io/s4l-plugins-documentation/
+site_url: https://ZurichMedTech.github.io/modeling-intelligence/
 # Uncomment and customize if your repo is in a subfolder
 # docs_dir: docs
 
@@ -36,8 +36,8 @@ theme:
     repo: fontawesome/brands/github
 
 # Update these URLs with your actual GitHub repository information
-repo_url: https://github.com/ZurichMedTech/s4l-plugins-documentation
-repo_name: s4l-plugins-documentation
+repo_url: https://github.com/ZurichMedTech/model-intelligence
+repo_name: model-intelligence
 
 nav:
   - Home: index.md
