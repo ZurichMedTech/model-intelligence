@@ -1,9 +1,9 @@
 site_name: S4L Modeling Intelligence Documentation
-site_description: Documentation for Sim4Life's Modeling Intelligence features
+site_description: Documentation for Sim4Life's Modeling Intelligence HyperTools
 site_author: Sim4Life Modeling Intelligence Team
 
 # The following settings ensure proper path resolution for GitHub Pages
-site_url: https://ZurichMedTech.github.io/modeling-intelligence/
+site_url: https://ZurichMedTech.github.io/model-intelligence/
 # Uncomment and customize if your repo is in a subfolder
 # docs_dir: docs
 
@@ -41,24 +41,16 @@ repo_name: model-intelligence
 
 nav:
   - Home: index.md
-  - Getting Started:
-    - Introduction: getting-started/installation.md
-    - Quick Start: getting-started/quick-start.md
-  - Plugin Structure:
-    - Overview: plugin-structure/overview.md
-    - Entry Points: plugin-structure/entry-points.md
-    - Tree Structure: plugin-structure/tree-structure.md
-  - Creating a Plugin:
-    - Creating a Simulation Class: creating-a-plugin/creating-simulation.md
-    - Defining Settings: creating-a-plugin/defining-settings.md
-    - Property Types: creating-a-plugin/property-types.md
-    - Drag and Drop Support: creating-a-plugin/drag-and-drop.md
-  - Solver Implementation:
-    - Writing a Solver: solver-implementation/writing-solver.md
-    - API Models: solver-implementation/api-models.md
-  - Result Extractors:
-    - Overview: extractors/overview.md
-    - Creating an Extractor: extractors/creating-extractor.md
+  - Getting Started: getting-started.md
+  - Manual: manual/overview.md
+    - HyperTool Creation: manual/hypertool-creation.md
+    - Navigation: manual/navigation.md
+    - Setup: manual/setup.md
+    - Response Surface Modeling: manual/response-surface-modeling.md
+    - Uncertainty Quantification: manual/uncertainty-quantification.md
+  - Tutorials: tutorials/overview.md
+    - Response Surface Modeling Tutorial: tutorials/response-surface-modeling-tutorial.md
+    - Uncertainty Quantification Tutorial: tutorials/uncertainty-quantification-tutorial.md
 
 markdown_extensions:
   - pymdownx.highlight:

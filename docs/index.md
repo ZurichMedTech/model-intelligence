@@ -7,7 +7,7 @@
 <div class="grid cards" markdown>
 
 - :material-wrench: **Getting Started**  
-  [Learn the basics](getting-started/overview.md) of Model Intelligence and how to get started
+  [Learn the basics](getting-started.md) of Model Intelligence and how to get started
 
 - :material-book: **Manual**  
   [Comprehensive documentation](manual/setup.md) covering all features and functionality
@@ -41,12 +41,12 @@ Build accurate surrogate models that capture the essential behavior of your simu
 ### Uncertainty Quantification
 Propagate input uncertainties through your models to understand confidence bounds and risk assessments for your design decisions.
 
-## Documentation Structure
+## Next Steps
 
 This documentation is organized into three main sections:
 
-- **Getting Started**: Quick introduction and setup instructions
-- **Manual**: Comprehensive reference documentation for all HyperTools and features
-- **Tutorials**: Hands-on examples demonstrating real-world applications
+- **[Getting Started](getting-started.md)**: Quick introduction and setup instructions
+- **[Manual](manual/hypertool-creation.md)**: Comprehensive reference documentation for all HyperTools and features
+- **[Tutorials](tutorials/overview.md)**: Hands-on examples demonstrating real-world applications
 
 Whether you're new to modeling intelligence or an experienced user, you'll find the information you need to make the most of Model Intelligence's powerful capabilities.
