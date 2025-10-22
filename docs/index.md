@@ -1,76 +1,52 @@
-# Sim4Life Plugin Framework
+# Modeling Intelligence
 
-Welcome to the Sim4Life Plugin Framework documentation. This framework enables you to develop custom simulation plugins for the Sim4Life simulation platform.
+!!! info "Modeling Intelligence: A Paradigm Shift in Simulation Analysis"
+
+    Modeling Intelligence represents a transformative approach to understanding complex simulation models. By creating simplified mathematical representations of computationally intensive simulations, meta-modeling enables rapid exploration of parameter spaces that would otherwise require thousands of time-consuming simulations. This "model intelligence" approach empowers users to gain deeper insights into parameter sensitivities, optimize designs efficiently, quantify uncertainties, and make data-driven decisions with unprecedented speed. For bioelectronic applications, where biological variability and design parameters interact in complex ways, meta-modeling transforms raw simulation data into actionable knowledge—revealing relationships between inputs and outcomes that might remain hidden in traditional simulation approaches. The techniques you'll learn in this documentation represent a major advancement in simulation analysis, allowing you to extract maximum value from your models while dramatically reducing computational overhead.
 
 <div class="grid cards" markdown>
 
-- :material-rocket-launch: **Quick Start**  
-  [Get started quickly](getting-started/quick-start.md) with a new simulation plugin
+- :material-wrench: **Getting Started**  
+  [Learn the basics](getting-started/overview.md) of Model Intelligence and how to get started
 
-- :material-puzzle: **Plugin Structure**  
-  [Learn about the plugin architecture](plugin-structure/overview.md) and organization
+- :material-book: **Manual**  
+  [Comprehensive documentation](manual/setup.md) covering all features and functionality
 
-- :material-code-braces: **Create Your Plugin**  
-  [Create your own simulation plugin](creating-a-plugin/creating-simulation.md) using cookiecutter templates
-
-- :material-cogs: **Solver Implementation**  
-  [Implement your solver](solver-implementation/writing-solver.md) and define API models
-
-- :material-chart-bar: **Result Extractors**  
-  [Extract and visualize results](extractors/overview.md) and create custom extractors
+- :material-school: **Tutorials**  
+  [Step-by-step tutorials](tutorials/overview.md) with practical examples and use cases
 
 </div>
 
-## What is Sim4Life Plugin Framework?
+## What is Model Intelligence?
 
-The Sim4Life Plugin Framework is an extensible architecture for creating custom physics simulations within the Sim4Life platform. It provides a structured way to:
+Model Intelligence is Sim4Life's advanced suite that transforms complex simulation workflows into actionable insights. Modeling Intelligence HyperTools provide:
 
-- Create interactive UI components for simulation setup and configuration
-- Implement numerical solvers for the simulation equations
-- Visualize and analyze simulation results
-
-The framework follows a Model-View-Controller (MVC) pattern to separate simulation logic from user interface components, making it easier to develop, test, and maintain simulation plugins.
+- **Surrogate Modeling**: Create fast, accurate mathematical approximations of your simulations
+- **Sensitivity Analysis**: Understand which parameters most influence your results  
+- **Uncertainty Quantification**: Quantify confidence levels and propagate uncertainties
+- **Design Optimization**: Find optimal parameter configurations efficiently
+- **Parameter Space Exploration**: Rapidly explore thousands of parameter combinations
 
 ## Key Features
 
-- **Tree-based UI Structure**: Organize simulation components in an intuitive tree structure
-- **From Views**: Automatically generate form views for simulation configuration and options
-- **Drag-and-Drop Geometry Support**: Easily associate geometry with simulation components
-- **Solver API**: Streamlined data transfer between UI and numerical solvers
-- **Extractor Framework**: Powerful result visualization and post-processing capabilities
+### HyperTool Creation
+Set up and configure your intelligent model analysis with intuitive interfaces that guide you through function creation, parameter definition, and sampling strategy configuration.
 
-## Example: Heat Conduction Plugin
+### Interactive Visualizations
+Navigate through complex parameter spaces with interactive visualizations that reveal relationships between inputs and outputs in real time.
 
-This documentation uses a heat conduction simulation plugin as a comprehensive example. This plugin solves the steady-state heat equation:
+### Response Surface Modeling
+Build accurate surrogate models that capture the essential behavior of your simulations while running orders of magnitude faster than the original models.
 
-$$\nabla \cdot (k \nabla T) + Q = 0$$
+### Uncertainty Quantification
+Propagate input uncertainties through your models to understand confidence bounds and risk assessments for your design decisions.
 
-Where:
+## Documentation Structure
 
-- $T$ is the temperature field
-- $k$ is the thermal conductivity
-- $Q$ is the volumetric heat source
+This documentation is organized into three main sections:
 
-The heat conduction example demonstrates all core aspects of plugin development:
+- **Getting Started**: Quick introduction and setup instructions
+- **Manual**: Comprehensive reference documentation for all HyperTools and features
+- **Tutorials**: Hands-on examples demonstrating real-world applications
 
-- Creating a tree-structured simulation model
-- Defining material properties and boundary conditions
-- Implementing a finite difference solver
-- Extracting and visualizing temperature fields and heat flux
-
-![Heat Conduction Simulation](assets/heat_plugin_setup.gif)
-
-## Getting Started
-
-Ready to start developing? Check out the [Quick Start Guide](getting-started/quick-start.md) to create your first simulation plugin!
-
----
-
-## Next Steps
-
-- [Installation](getting-started/installation.md)
-- [Quick Start](getting-started/quick-start.md)
-- [Plugin Structure Overview](plugin-structure/overview.md)
-- [Creating a Simulation Plugin](creating-a-plugin/creating-simulation.md)
-- [Solver Implementation](solver-implementation/writing-solver.md)
-- [Results Extractors Overview](extractors/overview.md)
+Whether you're new to modeling intelligence or an experienced user, you'll find the information you need to make the most of Model Intelligence's powerful capabilities.
