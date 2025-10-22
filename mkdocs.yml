@@ -42,13 +42,13 @@ repo_name: model-intelligence
 nav:
   - Home: index.md
   - Getting Started: getting-started.md
-  - Manual: manual/overview.md
+  - Manual:
     - HyperTool Creation: manual/hypertool-creation.md
     - Navigation: manual/navigation.md
     - Setup: manual/setup.md
     - Response Surface Modeling: manual/response-surface-modeling.md
     - Uncertainty Quantification: manual/uncertainty-quantification.md
-  - Tutorials: tutorials/overview.md
+  - Tutorials:
     - Response Surface Modeling Tutorial: tutorials/response-surface-modeling-tutorial.md
     - Uncertainty Quantification Tutorial: tutorials/uncertainty-quantification-tutorial.md
 
