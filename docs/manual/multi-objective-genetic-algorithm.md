@@ -199,30 +199,23 @@ When design parameters are subject to uncertainty or variability, robust MOGA ap
 
 ## Integration with Other Model Intelligence Tools
 
-### Comprehensive Workflow Integration
+### Response Surface Modeling Integration
 
-MOGA optimization provides maximum value when integrated with other Model Intelligence capabilities, creating comprehensive design and analysis workflows.
+MOGA optimization is performed on surrogate models created through Response Surface Modeling, enabling efficient exploration of complex design spaces. The insights gained from RSM parameter analysis directly inform and enhance MOGA optimization. Furthermore, the same data used to build RSM surrogate models can be leveraged for MOGA optimization, ensuring consistency across analyses and step-by-step data-driven design workflows.
 
-**Sequential Tool Application**
-1. **MOGA for Design Discovery**: Identify Pareto optimal design regions
-2. **RSM for Detailed Analysis**: Understand parameter dependencies around selected designs
-3. **UQ for Robustness Assessment**: Quantify design reliability under uncertainty
+For detailed parameter analysis supporting multi-objective optimization, see the [Response Surface Modeling](response-surface-modeling.md) documentation.
 
-**Iterative Refinement**
-- **Pareto Region Refinement**: Use RSM insights to focus MOGA on promising design regions
-- **Uncertainty-Aware Optimization**: Incorporate UQ results into MOGA objective formulations
-- **Design Space Expansion**: Use initial MOGA results to guide expanded parameter exploration
+### Uncertainty Quantification Integration
 
-### Tool Synergies
+MOGA-discovered Pareto optimal solutions can be assessed for robustness using Uncertainty Quantification, enabling selection of designs that maintain good performance across parameter uncertainty ranges.
 
-**MOGA + Response Surface Modeling**
-- **Local Analysis**: Detailed parameter studies around Pareto optimal solutions
-- **Sensitivity Analysis**: Understanding which parameters most influence tradeoffs
-- **Gradient Information**: Enhanced optimization efficiency through surrogate gradients
+For robustness assessment of optimized designs, see the [Uncertainty Quantification](uncertainty-quantification.md) documentation.
 
-**MOGA + Uncertainty Quantification**
-- **Robust Design Selection**: Choose Pareto solutions with low uncertainty sensitivity
-- **Risk-Aware Optimization**: Incorporate uncertainty directly into objective functions
-- **Statistical Validation**: Verify optimization results under parameter uncertainty
+### Data-Driven Design Workflow
 
-This comprehensive approach transforms traditional design processes into systematic, data-driven optimization workflows that maximize both performance and reliability while minimizing development time and risk.
+The combination of RSM, MOGA, and UQ provides a complete Model Intelligence workflow:
+
+1. **RSM** analysis provides parameter understanding and sensitivity insights to guide optimization setup
+2. **MOGA** optimization systematically discovers optimal tradeoffs between competing objectives
+3. **UQ** assessment validates selected designs for robustness under parameter uncertainty
+4. **Iterative Enhancement**: insights from each tool enable targeted refinement and improved analysis confidence across all tools simultaneously.

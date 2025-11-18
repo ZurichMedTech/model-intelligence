@@ -64,3 +64,26 @@ Furthermore, one / two / three-dimension visualization of input parameter depend
 2. **Cross-Validation**: Review validation metrics to ensure adequate model accuracy
 3. **Visual Inspection**: Use response surface visualizations to verify model behavior
 4. **Sensitivity Check**: Compare UQ results with expected parameter sensitivities
+
+## Integration with Other Model Intelligence Tools
+
+### Response Surface Modeling Integration
+
+Uncertainty Quantification builds directly on Response Surface Modeling capabilities, using RSM surrogate models for efficient uncertainty propagation and parameter sensitivity understanding.
+
+For detailed parameter analysis supporting uncertainty quantification, see the [Response Surface Modeling](response-surface-modeling.md) documentation.
+
+### Multi-Objective Optimization Integration
+
+Uncertainty Quantification provides critical robustness assessment for multi-objective optimization results, helping select robust designs from the Pareto frontier and quantifying performance variability under parameter uncertainty.
+
+For systematic multi-objective optimization with uncertainty considerations, see the [Multi-Objective Genetic Algorithm (MOGA)](multi-objective-genetic-algorithm.md) documentation.
+
+### Data-Driven Design Workflow
+
+The combination of RSM, MOGA, and UQ provides a complete Model Intelligence workflow:
+
+1. **RSM** analysis establishes parameter relationships and builds high-quality surrogate models
+2. **MOGA** optimization identifies optimal design tradeoffs and Pareto frontier solutions
+3. **UQ** validation assesses robustness and reliability of selected designs under uncertainty
+4. **Iterative Enhancement**: insights from each tool enable refinement and targeted data collection to improve analysis confidence across all tools simultaneously.

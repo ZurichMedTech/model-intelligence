@@ -12,7 +12,7 @@ This "model intelligence" approach empowers users to:
 - **Make data-driven decisions** with unprecedented computational speed
 - **Extract maximum value** from simulation models while dramatically reducing computational overhead
 
-For bioelectronic applications and other complex engineering domains, where multiple parameters interact in non-obvious ways, metamodeling transforms raw simulation data into actionable knowledge—revealing relationships between inputs and outcomes that might remain hidden in traditional simulation approaches.
+For bioelectronic applications and other complex engineering domains, where multiple parameters interact in non-obvious ways, metamodeling transforms raw simulation data into actionable knowledge - revealing relationships between inputs and outcomes that might remain hidden in traditional simulation approaches.
 
 This section provides comprehensive guidance on using the Response Surface Modeling HyperTool Results interface. For detailed information on the Setup step, please refer to the [Setup documentation](setup.md).
 
@@ -130,3 +130,28 @@ The Response Surface Modeling HyperTool provides three primary visualization mod
 
 ![Multi-objective comparison](../assets/MetaModeling_figures/Isop50Shannon50Comparison.png)
 *Side-by-side 3D comparison of efficiency (left - 50% isopercentile threshold) and safety (right - Shannon Criteria) iso-surfaces, enabling multi-objective design optimization.*
+
+## Integration with Other Model Intelligence Tools
+
+### Multi-Objective Optimization Integration
+
+Response Surface Modeling provides the foundation for advanced multi-objective optimization workflows. The insights gained from RSM parameter analysis directly inform and enhance multi-objective genetic algorithm (MOGA) optimization. Furthermore, the same data used to build RSM surrogate models can be leveraged for MOGA optimization, ensuring consistency across analyses and step-by-step data-driven design workflows.
+
+For systematic multi-objective optimization building on RSM insights, see the [Multi-Objective Genetic Algorithm (MOGA)](multi-objective-genetic-algorithm.md) documentation.
+
+### Uncertainty Quantification Integration
+
+RSM surrogate models, or automatic optimization on them through the MOGA algorithm, enable data-driven selection of design parameters. Uncertainty Quantification further enables assessment of the robustness of these design choices under parameter variability.
+
+For comprehensive uncertainty analysis based on RSM-informed design choices, see the [Uncertainty Quantification](uncertainty-quantification.md) documentation.
+
+### Data-Driven Design Workflow
+
+The combination of RSM, MOGA, and UQ provides a complete Model Intelligence workflow:
+
+1. **RSM** visualization provides deeper understanding into parameter dependencies and allows identification of key relationships and output sensitivities
+2. **MOGA**: optimization over the full design space allows systematic exploration and data-driven optimal tradeoffs between competing objectives
+3. **UQ**: design choices can be assessed for robustness and reliability under parameter uncertainty
+4. **Iterative Refinement**: insights from each tool provide further refinement for each other. Furthermore, additional data can be collected in targeted regions to improve surrogate model quality and analysis confidence, improving the accuracy of results across all tools simultaneously.
+
+
