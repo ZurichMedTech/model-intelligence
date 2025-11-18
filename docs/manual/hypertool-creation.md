@@ -6,6 +6,8 @@ Model Intelligence HyperTools provide specialized interfaces for advanced modeli
 
 - **Response Surface Modeling (RSM) HyperTool**: surrogate models enable interactive visualizations of the relationship between input parameters and simulation outcomes, enabling users to rapidly gain major insights into their models.
 
+- **Multi-Objective Genetic Algorithm (MOGA) HyperTool**: systematic optimization of competing objectives discovers the Pareto frontier of optimal design tradeoffs, enabling engineers to make informed decisions when multiple objectives must be balanced.
+
 - **Uncertainty Quantification (UQ) HyperTool**: Enables statistical analysis of how uncertainties in input parameters propagate to simulation results, helping assess the robustness of your models.
 
 ## Creating a New HyperTool
@@ -14,6 +16,9 @@ To create a new HyperTool, navigate to the Dashboard, click the *+ New* button o
 
 ![Creating a new Response Surface Modeling HyperTool](../assets/MetaModeling_figures/CreateRSMHyperTool.png)
 *Creating a new Response Surface Modeling HyperTool from the Dashboard*
+
+![Creating a new MOGA HyperTool](../assets/MetaModeling_figures/MOGA/Creating_MOGA_Study.png)
+*Creating a new Multi-Objective Genetic Algorithm (MOGA) HyperTool from the Dashboard*
 
 ![Creating a new Uncertainty Quantification HyperTool](../assets/MetaModeling_figures/CreateUQHyperTool.png)
 *Creating a new Uncertainty Quantification HyperTool from the Dashboard*
@@ -50,12 +55,27 @@ The UQ HyperTool quantifies how uncertainties in input parameters affect simulat
 - Robust design optimization accounting for manufacturing tolerances
 - Regulatory submissions requiring uncertainty analysis
 
+### Multi-Objective Genetic Algorithm (MOGA) HyperTool
+
+The MOGA HyperTool performs systematic multi-objective optimization to discover optimal tradeoffs between competing design objectives. It provides:
+
+- **Pareto Frontier Discovery**: Identify all optimal design tradeoff combinations
+- **Multi-Objective Optimization**: Simultaneously optimize competing objectives without subjective weighting
+- **Design Space Exploration**: Systematic search through high-dimensional parameter spaces
+- **Engineering Decision Support**: Quantitative basis for selecting designs based on priority tradeoffs
+
+**Use Cases:**
+- Bioelectronic device design balancing safety and efficacy requirements
+- Engineering optimization with multiple conflicting performance criteria
+- Regulatory compliance requiring demonstrable optimization of competing objectives
+- Design exploration where traditional single-objective approaches are insufficient
+
 ## Getting Started
 
 Once you create a HyperTool, you'll be guided through the setup process:
 
 1. **Function Selection**: Choose from available simulation functions
-2. **Parameter Configuration**: Define ranges (RSM) or distributions (UQ)
+2. **Parameter Configuration**: Define ranges (RSM, MOGA) or distributions (UQ)
 3. **Analysis Setup**: Configure sampling and modeling parameters
 4. **Results Exploration**: Use interactive interfaces to gain insights
 
@@ -64,4 +84,5 @@ Once you create a HyperTool, you'll be guided through the setup process:
 - Learn about the [Setup process](setup.md) for configuring your analysis
 - Explore [Navigation features](navigation.md) for interactive analysis
 - Review specific documentation for [Response Surface Modeling](response-surface-modeling.md)
-- Understand [Uncertainty Quantification](uncertainty-quantification.md) capabilities
+- Understand [Multi-Objective Genetic Algorithm (MOGA)](multi-objective-genetic-algorithm.md) optimization
+- Explore [Uncertainty Quantification](uncertainty-quantification.md) capabilities

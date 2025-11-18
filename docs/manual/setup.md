@@ -45,12 +45,9 @@ Once a function is selected, Step 2 becomes active, allowing users to define the
 For each input parameter exposed by the selected function, users can edit the parameter configuration through the **Parameter Cards**, in which it is shown:
 - Parameter name
 - Minimum value of the parameter range
-- Maximum value input field
+- Maximum value of the parameter range
 
-#### Range Definition
-- **Min**: Define the lower bound of the parameter range of interest
-- **Max**: Define the upper bound of the parameter range of interest
-- **Validation**: The system validates that minimum values are less than maximum values
+The compatibility of the input minimum and maximum values is automatically validated by the system.
 
 ### Parameter Range Considerations
 
@@ -67,6 +64,37 @@ For each input parameter exposed by the selected function, users can edit the pa
 **Computational Efficiency**
 - Larger ranges require more samples for adequate coverage
 - Balance comprehensive coverage with computational cost
+
+## Step 2 - Multi-Objective Genetic Algorithm (MOGA): Parameter Ranges and Objective Configuration
+
+Once a function is selected for Multi-Objective Genetic Algorithm analysis, Step 2 becomes active, allowing users to define parameter ranges for optimization and configure multiple competing objectives for simultaneous optimization.
+
+
+### Parameter Range Configuration for Optimization
+
+Similar to [[Response Surface Modeling Setup Step 2]], MOGA requires defining the feasible ranges for each design parameter that will be optimized.
+
+### Multi-Objective Configuration
+Additionally, users can specify which quantities of interest (QoIs) should be included as optimization objectives, and whether each of them should be minimized or maximized.
+
+![MOGA Setup interface](../assets/MetaModeling_figures/MOGA/MOGA_Setup.png)
+*MOGA setup interface showing parameter range definition and multi-objective configuration options*
+
+### MOGA-Specific Considerations
+
+**Objective Conflict Assessment**
+- Ensure selected objectives actually compete with each other, and are not trivially correlated
+- Verify objectives are sensitive to the chosen design parameters
+
+**Computational Planning**
+- MOGA requires significantly more evaluations than RSM or UQ
+- Population size × generations determines total computational budget
+- Balance solution quality with available computational resources
+
+**Design Space Definition**
+- Parameter ranges should encompass practically feasible designs
+- Consider manufacturing and implementation constraints
+- Ensure ranges allow sufficient design space exploration
 
 ## Step 2 - Uncertainty Quantification: Parameter Distributions
 
