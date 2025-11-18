@@ -8,14 +8,17 @@ The tutorials demonstrate practical applications of Model Intelligence tools usi
 
 <div class="grid cards" markdown>
 
-- :material-chart-line: **Response Surface Modeling Tutorial**  
-  [Learn RSM techniques](response-surface-modeling-tutorial.md) with a neural implant design optimization example
+- :material-cog-outline: **Pipeline Setup Tutorial**  
+  [Understand pipeline architecture](pipeline-setup-tutorial.md) and Function creation for Model Intelligence analysis
 
-- :material-chart-bell-curve: **Uncertainty Quantification Tutorial**  
-  [Explore UQ capabilities](uncertainty-quantification-tutorial.md) for robust device design validation
+- :material-chart-line: **Response Surface Modeling Tutorial**  
+  [Learn RSM techniques](response-surface-modeling-tutorial.md) with interactive parameter visualization and analysis
 
 - :material-chart-scatter-plot: **Multi-Objective Genetic Algorithm (MOGA) Tutorial**  
   [Explore MOGA optimization](moga-tutorial.md) for simultaneous multi-objective design optimization
+
+- :material-chart-bell-curve: **Uncertainty Quantification Tutorial**  
+  [Explore UQ capabilities](uncertainty-quantification-tutorial.md) for robust device design validation
 
 </div>
 
@@ -50,8 +53,13 @@ The tutorials use pre-computed data from bioelectronic device simulations, speci
 
 ## Getting Started
 
-We recommend starting with the Response Surface Modeling tutorial to understand the fundamental concepts. You can then explore either the Multi-Objective Genetic Algorithm (MOGA) tutorial to learn about simultaneous optimization of competing objectives, or proceed to the Uncertainty Quantification tutorial to learn about statistical analysis techniques.
+We recommend starting with the **Pipeline Setup Tutorial** to understand how simulation workflows are structured for Model Intelligence analysis. This foundation is essential for effectively using all HyperTools.
+
+After understanding the pipeline architecture, you can explore the analysis tutorials in any order based on your objectives:
+- **Response Surface Modeling** for detailed parameter dependency analysis
+- **Multi-Objective Genetic Algorithm (MOGA)** for systematic optimization of competing objectives
+- **Uncertainty Quantification** for statistical robustness assessment
 
 For a comprehensive workflow, the combination of MOGA optimization for design discovery, RSM for detailed analysis, and UQ for robustness assessment provides complete Model Intelligence capabilities for advanced bioelectronic device development.
 
-Both tutorials use the same underlying simulation model but demonstrate different analysis approaches, showing how the same data can provide complementary insights depending on your analysis objectives.
+All analysis tutorials use the same underlying simulation model but demonstrate different analysis approaches, showing how the same pipeline can provide complementary insights depending on your engineering objectives.

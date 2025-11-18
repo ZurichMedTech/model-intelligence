@@ -47,9 +47,11 @@ nav:
     - Navigation: manual/navigation.md
     - Setup: manual/setup.md
     - Response Surface Modeling: manual/response-surface-modeling.md
+    - Multi-Objective Genetic Algorithm (MOGA): manual/multi-objective-genetic-algorithm.md
     - Uncertainty Quantification: manual/uncertainty-quantification.md
   - Tutorials:
     - Tutorial Overview: tutorials/overview.md
+    - Pipeline Setup Tutorial: tutorials/pipeline-setup-tutorial.md
     - Response Surface Modeling Tutorial: tutorials/response-surface-modeling-tutorial.md
     - Multi-Objective Genetic Algorithm (MOGA) Tutorial: tutorials/moga-tutorial.md
     - Uncertainty Quantification Tutorial: tutorials/uncertainty-quantification-tutorial.md
