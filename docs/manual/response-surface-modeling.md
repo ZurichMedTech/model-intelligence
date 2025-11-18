@@ -130,6 +130,3 @@ The Response Surface Modeling HyperTool provides three primary visualization mod
 
 ![Multi-objective comparison](../assets/MetaModeling_figures/Isop50Shannon50Comparison.png)
 *Side-by-side 3D comparison of efficiency (left - 50% isopercentile threshold) and safety (right - Shannon Criteria) iso-surfaces, enabling multi-objective design optimization.*
-
-!!! note "Preview Mode"
-    Model Intelligence HyperTools are currently in Preview mode. Full-featured access, including advanced sampling strategies and extended analysis capabilities, is available upon request through support channels. The methodologies demonstrated represent state-of-the-art approaches to probabilistic design validation and regulatory-grade uncertainty analysis.

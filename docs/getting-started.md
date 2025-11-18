@@ -35,7 +35,7 @@ A typical Model Intelligence workflow involves:
 ## Getting Started
 
 ### Prerequisites
-- Access to Sim4Life.web
+- Access to Sim4Life Web
 - Basic understanding of your simulation models and parameters
 
 ### Access Modeling Intelligence HyperTools
@@ -53,6 +53,6 @@ A typical Model Intelligence workflow involves:
 - Try the [Tutorials](tutorials/overview.md) for hands-on experience
 - Review the [Manual](manual/hypertool-creation.md) for detailed documentation
 
-No additional software installation is required - everything runs directly in your web browser through the Sim4Life.web interface.
+No additional software installation is required - everything runs directly in your web browser through the Sim4Life Web interface.
 
 For information on obtaining an account and accessing these platforms, visit [sim4life.swiss](https://sim4life.swiss).

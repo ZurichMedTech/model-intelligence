@@ -4,8 +4,6 @@
 
 Model Intelligence HyperTools provide specialized interfaces for advanced modeling capabilities in Sim4Life. You can create different types of Model Intelligence HyperTools from the Dashboard to perform specific analysis tasks.
 
-Currently Model Intelligence HyperTools are in Preview mode. Two HyperTools have been made available to all users at this stage:
-
 - **Response Surface Modeling (RSM) HyperTool**: surrogate models enable interactive visualizations of the relationship between input parameters and simulation outcomes, enabling users to rapidly gain major insights into their models.
 
 - **Uncertainty Quantification (UQ) HyperTool**: Enables statistical analysis of how uncertainties in input parameters propagate to simulation results, helping assess the robustness of your models.
