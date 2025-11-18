@@ -51,6 +51,7 @@ nav:
   - Tutorials:
     - Tutorial Overview: tutorials/overview.md
     - Response Surface Modeling Tutorial: tutorials/response-surface-modeling-tutorial.md
+    - Multi-Objective Genetic Algorithm (MOGA) Tutorial: tutorials/moga-tutorial.md
     - Uncertainty Quantification Tutorial: tutorials/uncertainty-quantification-tutorial.md
 
 markdown_extensions:

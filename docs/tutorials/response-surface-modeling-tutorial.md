@@ -169,6 +169,10 @@ This tutorial demonstrates how Model Intelligence tools dramatically accelerate 
 
 ## Next Steps
 
-For further exploration, we recommend proceeding to our next tutorial that demonstrates how to establish statistically rigorous confidence intervals for the optimal design parameters when accounting for the inherent variability in human tissue properties. 
+For further exploration, we recommend exploring our additional tutorials that complement the Response Surface Modeling approach:
 
-The [Uncertainty Quantification HyperTool](uncertainty-quantification-tutorial.md) provides a robust framework for quantifying output variability - a critical requirement for regulatory submission and clinical translation of bioelectronic devices. This capability allows engineers and researchers to efficiently demonstrate the statistical reliability of their designs across physiologically relevant parameter ranges.
+- **[Multi-Objective Genetic Algorithm (MOGA) Tutorial](moga-tutorial.md)** - Learn how to systematically optimize competing objectives (like efficacy vs. safety) and discover the Pareto frontier of optimal design tradeoffs. This is particularly valuable when you need to balance multiple conflicting design goals.
+
+- **[Uncertainty Quantification Tutorial](uncertainty-quantification-tutorial.md)** - Establish statistically rigorous confidence intervals for your optimal design parameters when accounting for the inherent variability in human tissue properties. This provides a robust framework for quantifying output variability - a critical requirement for regulatory submission and clinical translation of bioelectronic devices.
+
+The combination of RSM for detailed parameter analysis, MOGA for multi-objective optimization, and UQ for robustness assessment provides a comprehensive Model Intelligence workflow for advanced bioelectronic device development.

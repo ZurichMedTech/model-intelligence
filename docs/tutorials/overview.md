@@ -14,6 +14,9 @@ The tutorials demonstrate practical applications of Model Intelligence tools usi
 - :material-chart-bell-curve: **Uncertainty Quantification Tutorial**  
   [Explore UQ capabilities](uncertainty-quantification-tutorial.md) for robust device design validation
 
+- :material-chart-scatter-plot: **Multi-Objective Genetic Algorithm (MOGA) Tutorial**  
+  [Explore MOGA optimization](moga-tutorial.md) for simultaneous multi-objective design optimization
+
 </div>
 
 ## Tutorial Structure
@@ -47,6 +50,8 @@ The tutorials use pre-computed data from bioelectronic device simulations, speci
 
 ## Getting Started
 
-We recommend starting with the Response Surface Modeling tutorial to understand the fundamental concepts, then proceeding to the Uncertainty Quantification tutorial to learn about statistical analysis techniques.
+We recommend starting with the Response Surface Modeling tutorial to understand the fundamental concepts. You can then explore either the Multi-Objective Genetic Algorithm (MOGA) tutorial to learn about simultaneous optimization of competing objectives, or proceed to the Uncertainty Quantification tutorial to learn about statistical analysis techniques.
+
+For a comprehensive workflow, the combination of MOGA optimization for design discovery, RSM for detailed analysis, and UQ for robustness assessment provides complete Model Intelligence capabilities for advanced bioelectronic device development.
 
 Both tutorials use the same underlying simulation model but demonstrate different analysis approaches, showing how the same data can provide complementary insights depending on your analysis objectives.

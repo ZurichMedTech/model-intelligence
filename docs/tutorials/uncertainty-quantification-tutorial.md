@@ -117,5 +117,8 @@ The Uncertainty Quantification HyperTool represents a paradigm shift from determ
 ## Related Resources
 
 - [Response Surface Modeling Tutorial](response-surface-modeling-tutorial.md): Learn the fundamentals of surrogate modeling
+- [Multi-Objective Genetic Algorithm (MOGA) Tutorial](moga-tutorial.md): Discover how to systematically optimize competing objectives and explore Pareto optimal designs
 - [Uncertainty Quantification Manual](../manual/uncertainty-quantification.md): Comprehensive reference documentation
+
+For a comprehensive Model Intelligence workflow, combine UQ for robustness assessment with RSM for detailed parameter analysis and MOGA for multi-objective optimization to achieve advanced bioelectronic device development capabilities.
 - [Setup Guide](../manual/setup.md): Detailed configuration instructions
