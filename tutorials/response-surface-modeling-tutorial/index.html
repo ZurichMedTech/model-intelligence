@@ -1,0 +1,1127 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentation for Sim4Life's Modeling Intelligence HyperTools">
+      
+      
+        <meta name="author" content="Sim4Life Modeling Intelligence Team">
+      
+      
+        <link rel="canonical" href="https://ZurichMedTech.github.io/model-intelligence/tutorials/response-surface-modeling-tutorial/">
+      
+      
+        <link rel="prev" href="../overview/">
+      
+      
+        <link rel="next" href="../uncertainty-quantification-tutorial/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.22">
+    
+    
+      
+        <title>Response Surface Modeling Tutorial - S4L Modeling Intelligence Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.84d31ad4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/_mkdocstrings.css">
+    
+      <link rel="stylesheet" href="../../css/custom.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#response-surface-modeling-tutorial-sural-nerve-pain-relief-neural-implant-design-optimization" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="S4L Modeling Intelligence Documentation" class="md-header__button md-logo" aria-label="S4L Modeling Intelligence Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            S4L Modeling Intelligence Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Response Surface Modeling Tutorial
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6m0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4M7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/ZurichMedTech/model-intelligence" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    model-intelligence
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../getting-started/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Getting Started
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../manual/hypertool-creation/" class="md-tabs__link">
+          
+  
+  
+  Manual
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../overview/" class="md-tabs__link">
+          
+  
+  
+  Tutorials
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="S4L Modeling Intelligence Documentation" class="md-nav__button md-logo" aria-label="S4L Modeling Intelligence Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    S4L Modeling Intelligence Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/ZurichMedTech/model-intelligence" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    model-intelligence
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Getting Started
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Manual
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Manual
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../manual/hypertool-creation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    HyperTool Creation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../manual/navigation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Navigation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../manual/setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Setup
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../manual/response-surface-modeling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Response Surface Modeling
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../manual/uncertainty-quantification/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Uncertainty Quantification
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Tutorials
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Tutorials
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Tutorial Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Response Surface Modeling Tutorial
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Response Surface Modeling Tutorial
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introduction
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#preparation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Preparation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pipeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pipeline
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Pipeline">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pipeline-workbench" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pipeline Workbench
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modeling-simulation-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Modeling &amp; Simulation Workflow
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hypertool-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      HyperTool Setup
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="HyperTool Setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#starting-a-response-surface-modeling-hypertool" class="md-nav__link">
+    <span class="md-ellipsis">
+      Starting a Response Surface Modeling HyperTool
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#choosing-a-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      Choosing a Function
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#analysis-of-results" class="md-nav__link">
+    <span class="md-ellipsis">
+      Analysis of Results
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Analysis of Results">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#validate-model-quality" class="md-nav__link">
+    <span class="md-ellipsis">
+      Validate Model Quality
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1d-curve-response" class="md-nav__link">
+    <span class="md-ellipsis">
+      1D Curve Response
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2d-surface-response" class="md-nav__link">
+    <span class="md-ellipsis">
+      2D Surface Response
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3d-iso-surface-response" class="md-nav__link">
+    <span class="md-ellipsis">
+      3D Iso-Surface Response
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#extracting-quantitative-insights" class="md-nav__link">
+    <span class="md-ellipsis">
+      Extracting Quantitative Insights
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#validation-of-design-parameters-through-full-simulation-pipeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      Validation of Design Parameters through Full Simulation Pipeline
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conclusion
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#next-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      Next Steps
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../uncertainty-quantification-tutorial/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Uncertainty Quantification Tutorial
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="response-surface-modeling-tutorial-sural-nerve-pain-relief-neural-implant-design-optimization">Response Surface Modeling Tutorial - Sural Nerve Pain Relief Neural Implant Design Optimization</h1>
+<div class="admonition info">
+<p class="admonition-title">Model Intelligence: A Paradigm Shift in Simulation Analysis</p>
+<p>Meta-modeling (or surrogate modeling) represents a transformative approach to understanding complex simulation models. By creating simplified mathematical representations of computationally intensive simulations, meta-modeling enables rapid exploration of parameter spaces that would otherwise require thousands of time-consuming simulations. This "model intelligence" approach empowers users to gain deeper insights into parameter sensitivities, optimize designs efficiently, quantify uncertainties, and make data-driven decisions with unprecedented speed. For bioelectronic applications, where biological variability and design parameters interact in complex ways, meta-modeling transforms raw simulation data into actionable knowledge—revealing relationships between inputs and outcomes that might remain hidden in traditional simulation approaches. The techniques you'll learn in this tutorial represent a major advancement in simulation analysis, allowing you to extract maximum value from your models while dramatically reducing computational overhead.</p>
+</div>
+<h2 id="introduction">Introduction</h2>
+<p>This tutorial demonstrates the potential of Model Intelligence HyperTools to provide actionable insights for bioelectronic device design, balancing effectivity and safety.</p>
+<p>In particular, a neural implant at the sural nerve will aim to disrupt pain signals for sural nerve pain patients, a chronic pain condition, while keeping within safe stimulation limits to prevent damage to the nerve and neighbouring tissues.</p>
+<h2 id="preparation">Preparation</h2>
+<ol>
+<li>Sign into your sim4life.io / sim4life.science account. </li>
+<li>Click on the <em>+ New</em> button on the top left of the <em>Dashboard</em>.</li>
+<li>Under the HyperTools section, choose <em>Response Surface Modeling</em></li>
+</ol>
+<p><img alt="HyperTools creation" src="../../assets/MetaModeling_figures/CreateRSMHyperTool.png" />
+<em>HyperTools are available in the + New menu.</em></p>
+<h2 id="pipeline">Pipeline</h2>
+<div class="admonition tip">
+<p class="admonition-title">Tutorial Setup</p>
+<p>For this tutorial, this pipeline has already been set up &amp; a full sampling campaign executed, so that users can directly explore the Response Surface Modeling HyperTool's features. Details on the pipeline setup are provided here for completeness.</p>
+</div>
+<h3 id="pipeline-workbench">Pipeline Workbench</h3>
+<p>The workspace includes:
+1. <strong>Input parameters</strong> for electrode design parameters, tissue conductivities, and simulation parameters.
+2. <strong>Computational nodes</strong> which will build the model, perform simulations and extract numerical results based on the values of the input parameters.
+3. <strong>Output probes</strong> for resulting output metrics (quantities-of-interest, QoIs).</p>
+<p><img alt="Nerve Implant Pipeline" src="../../assets/MetaModeling_figures/NervePipeline.png" />
+<em>Nerve Implant Effectivity &amp; Safety pipeline, including nodes for input parameters and output QoIs.</em></p>
+<h3 id="modeling-simulation-workflow">Modeling &amp; Simulation Workflow</h3>
+<p>The computational pipeline includes the following steps:</p>
+<ol>
+<li>Loading a segmented histological nerve cross-section (multifascicular).</li>
+<li>Generating a 2D mesh and performing a 2.5D extrusion.</li>
+<li>Inserting two electrodes with parameterized angle width, length, inter-electrode spacing, and extra silicone insulation padding at both ends.</li>
+<li>Setting up an electromagnetic (EM) simulation with parameterized conductivity for blood, epineurium, perineurium, surrounding tissue, and fascicles (longitudinal and transversal).</li>
+<li>Extracting impedance and E_IEEE (ICNIRP) peak exposure.</li>
+<li>Extracting charge-per-phase, charge-density-per-phase, and Shannon criteria, as safety-related metrics for neurostimulation.</li>
+<li>Adding fiber trajectories with statistically varying diameters.</li>
+<li>Performing estimation of neurophysiological activation thresholds and extracting recruitment isopercentiles (10/50/90%) in terms of current (mA).</li>
+</ol>
+<h2 id="hypertool-setup">HyperTool Setup</h2>
+<h3 id="starting-a-response-surface-modeling-hypertool">Starting a Response Surface Modeling HyperTool</h3>
+<ul>
+<li>In the Dashboard, press the "+ New" button on the top left</li>
+<li>In the <strong>HyperTools</strong> section, click on the "Response Surface Modeling" option.</li>
+<li>Wait for the service to load.</li>
+</ul>
+<h3 id="choosing-a-function">Choosing a Function</h3>
+<ul>
+<li>In the "Function Setup" step, select the "Nerve Implant Effectivity &amp; Safety" function. </li>
+<li>It should have the defined design parameters (Inter-Electrode Spacing, Angle Width, Length, Width, and Silicone Padding) as inputs, and the defined QoIs as outputs. </li>
+<li>The info button allows visualization of the underlying pipeline.</li>
+<li>For this tutorial, parameter ranges have already been determined.</li>
+</ul>
+<p><img alt="Function selection interface" src="../../assets/MetaModeling_figures/ChooseFunctionAndRanges.png" />
+<em>The HyperTool allows choice of the function to be analyzed, and definition of the parameter ranges of interest. For this tutorial, these ranges have already been set.</em></p>
+<ul>
+<li>Once all parameter ranges have been chosen (pre-selected in this tutorial), click "Next" to move to results analysis.</li>
+<li>Wait until the AI model is generated. This operation might take a few minutes.</li>
+</ul>
+<h2 id="analysis-of-results">Analysis of Results</h2>
+<p>The Response Surface Modeling HyperTool allows users to visualize the influence of parameters on their output of choice both in 1D, 2D and 3D. If there are additional input parameters, they need to be fixed to constant values in order to obtain a projection that can be visualized. These values can be interactively changed with sliders, thus allowing to explore the full high-dimensional space.</p>
+<h3 id="validate-model-quality">Validate Model Quality</h3>
+<p>Model Intelligence HyperTools fit a surrogate model to simulated data (samples), also known as "observations". Based on these, which are considered the ground-truth, but take considerable computational resources to compute, a surrogate model (also called meta-model) is created that maps the input-output relationships of the full simulation pipeline. This low-complexity model can be used to gain insights on high-dimensional parameter dependencies at low computational cost, and for further applications such as surrogate-based optimization, model-based control, uncertainty quantification...</p>
+<p>Nonetheless, before using a surrogate model, the user is encouraged to inspect its quality-of-fit, and validate whether it is a suitable approximation of the simulation pipeline. In order to do so, a technique known as Cross-Validation is used, by which a surrogate model is fitted with a portion of the data. Then, the data that was hidden during training (validation set) is used to perform predictions and compare to the real simulated values. This procedure is performed multiple times, until all samples have been used once in the validation set. Comparing the predictions on all samples to their real simulated values provides a lower-bound confidence on the accuracy of the final surrogate model, which will be trained with all samples.</p>
+<p>In the first visualization of the Response Modeling HyperTool, a violin plot is displayed, which compares the sample values and distributions of the full-simulation observations versus their cross-validation predictions. Similar distributions, as well as low mean error at the per-sample level, indicates a good quality-of-fit.</p>
+<p>Furthermore, the mean and standard deviation of both the observations and the predictions' distribution is displayed, together with the per-sample Mean Absolute Error (MAE) and Root Mean Square Error (RMSE). Comparing these error metrics with the data distribution values can provide an idea of the magnitude of the prediction errors compared to the variance present in the data.</p>
+<p><img alt="Violin plot validation" src="../../assets/MetaModeling_figures/ViolinPlotValidation.png" />
+<em>The violin plot provides a tool to validate whether the distribution of cross-validation predictions matches that of the ground-truth observations. Moreover, we can compare the scale of the MAE (~4e-3) with the scale of variance in the data (standard deviation ~ 4e-2), showing that prediction error is only ~10% the variability in the data distribution, further strengthening the visual impression of the violin plot that the surrogate model is appropriately fitting the underlying observations.</em></p>
+<p>Once the surrogate model has been deemed appropriately well fitted, it is time to use it to gain insights into the outputs' (QoI) dependencies on the input parameters. For that purpose, visualizations based on one, two, or three simultaneous parameters can be seamlessly and efficiently generated through the Response Surface Modeling HyperTool. Please click the "Next" button to move to the 1D Curves visualization tool.</p>
+<div class="admonition note">
+<p class="admonition-title">High-Dimensional Visualization</p>
+<p>Please note that the data (and the surrogate model fitted to it) is N-dimensional (with N=4 in this tutorial) - which is not possible to visualize. Nonetheless, it is possible to examine lower-dimensional "slices" or "cross-sections" of the model (i.e. by fixing the value of some of the parameters in order to obtain lower-dimensional predictions). These slices, while not able to capture the dependencies on the fixed value parameters, can provide very valuable information on the parameter dependencies displayed. Moreover, by interactively changing the values assigned to the fixed parameters, it is possible to also gain an understanding on their role, both towards the output and their possibly complex interplay with other parameters. Therefore, lower-dimensional visualizations can still allow to gain deep understanding of parameter dependencies of the broader, high-dimensional model.</p>
+</div>
+<h3 id="1d-curve-response">1D Curve Response</h3>
+<p>In the 1D Curves visualization tool, the X axis represents the range of values of the selected input parameter (selectable at the "Axis" dropdown below the graph), while the Y axis represents the values of the QoI of choice (selectable at the top select box).</p>
+<div class="admonition note">
+<p class="admonition-title">Gaussian Process Confidence</p>
+<p>Gaussian Processes (GP), also known as Kriging, are used as surrogate models. These provide the advantage of not only providing a prediction of the data value, but also the associated uncertainty, which is very useful to assess confidence in the results. In the 1D Curve Responses, this confidence is displayed as the shaded area, indicating the 95% confidence interval (i.e. mean ± twice the standard deviation, for a Gaussian error distribution).</p>
+</div>
+<p>Moreover, the values of the other parameters can be dynamically adapted, either using the slider, setting a value in the textbox, or using the up/down arrows in the textbox. We encourage you to play with the interactive visualization to gain understanding on the parameter dependence of the QoIs at different "areas" of the model.</p>
+<p><img alt="1D Curve analysis" src="../../assets/MetaModeling_figures/1DCurve.png" />
+<em>One-dimensional visualization of the dependence of the Shannon Criteria of safety in neurostimulation with respect to electrode length. A clear dependence is observed - lower length lowers the Shannon Criteria value up to ~1.5mm, from a value over 1.0 to below 0.5, therefore making the device substantially safer. While the uncertainty bands appear relatively wide, they represent a high degree of confidence (95%) on a full-simulation sample lying within the shadowed range, following a normal (Gaussian) distribution around the predicted value. As the parameter dependency effect is still larger than it, thus providing assurance that the effect is soundly supported by the data underlying the model.</em></p>
+<h3 id="2d-surface-response">2D Surface Response</h3>
+<p>Two-dimensional response surfaces allows to inspect the parameter dependence of the output with respect to two input parameters simultaneously. </p>
+<p>As in the 1D Curves visualization tool, below the graph it is possible to modify the input parameters to visualize with the <em>Axis 1</em> and <em>Axis 2</em> dropdowns, and the fixed value of the other parameters can be interactively adapted at the sliders or their textbox.</p>
+<p><img alt="2D Surface analysis" src="../../assets/MetaModeling_figures/2DSurface_isop50.png" />
+<em>Two-dimensional visualization of the 50% isopercentile threshold (i.e. current [mA] necessary to activate 50% of the fibers in the nerve). A lower isopercentile threshold indicates easier stimulability (i.e. less current is needed to achieve the same level of stimulation) and is therefore preferred. Low angle widths (e.g. low coverage of the nerve) naturally result in difficulties to stimulate enough fibers, while it seems to flatten from ~120º - further coverage does not necessarily facilitate stimulation, once the electrode is in close proximity to enough fibers. Minima are observed at ~200º and ~250º, which could indicate proximity to a more superficial fascicle. However, the low relative magnitude of these changes advises caution, as these variations might very well be within the uncertainty associated to the surrogate model and therefore not necessarily reflect a real low-amplitude variation in the modeled simulation pipeline. On the other hand, Inter-Electrode Spacing shows a clearer but smaller influence on the output, with bigger spacing leading to lower stimulation thresholds.</em></p>
+<h3 id="3d-iso-surface-response">3D Iso-Surface Response</h3>
+<p>Three-dimensional data can be visualized through iso-surfaces (i.e. the surface of all points with the same value), which are then color-coded. Similar to previous visualization, the parameters of interest can be selected at the dropdowns below the graph, and the fixed-value parameters can be modified at the slider.
+This visualization provides the most information on the complex interplay between different parameters.</p>
+<p><img alt="3D Iso-Surface analysis" src="../../assets/MetaModeling_figures/3DIsoSurface_isop50.png" />
+<em>Three-dimensional visualization of the 50% isopercentile threshold (i.e. current [mA] necessary to activate 50% of the fibers in the nerve). As observed in the two-dimensional visualization, both higher angle widths and inter-electrode spacings contribute towards lower stimulation thresholds. Moreover, lower electrode lengths also seem to contribute in that regard - although, as seen in the one-dimensional, this would have a detrimental effect on the safety-related Shannon Criteria.</em></p>
+<h3 id="extracting-quantitative-insights">Extracting Quantitative Insights</h3>
+<p>The tools shown above allow to gain both qualitative and quantitative insights on output parameter dependence. </p>
+<p>In this tutorial, these visualization tools will be used to define design parameters of the sural nerve implant stimulator which appropriately balance effectivity (isopercentile threshold current at 50% fiber recruitment, <em>isop50</em>) and safety (Shannon Criteria at the same current level, <em>shannon50</em>).</p>
+<p><img alt="Multi-objective comparison" src="../../assets/MetaModeling_figures/Isop50Shannon50Comparison.png" />
+<em>Three-dimensional visualizations of the two main quantities of interest - 50% isopercentile threshold (i.e. current [mA] necessary to activate 50% of the fibers in the nerve) and Shannon Criteria at that current level - which should both be minimized for enhanced effectivity and safety. While both metrics seem to benefit from large angle widths and inter-electrode spacing, smaller length benefits effectivity but harms safety, advising an intermediate value as a compromise.</em></p>
+<p><img alt="Comparative 1D analysis" src="../../assets/MetaModeling_figures/1DCurves_Isop50_Shannon50_angleWidth_Length.png" />
+<em>The insights gained on the three-dimensional visualizations can be further explored through one-dimensional cross-sections, which also provides estimates of uncertainty. The figure shows dependence on the angle width and length parameters (which play the largest roles) on both 50% isopercentile current and Shannon Criteria. As seen in the three-dimensional visualizations, while both efficiency and safety benefit from wider angle width, we must find a compromise value in terms of length.</em></p>
+<p>Based on all the visualization explored through this tutorial, the following design parameters were chosen as optimal:
+- Angle Width: 250º
+- Inter-Electrode Spacing: 1.5mm
+- Length: 1mm
+- Silicone Padding: 1.5mm</p>
+<p><img alt="Optimal design distributions" src="../../assets/MetaModeling_figures/Isop50Shannon50Distributions.png" />
+<em>Distribution of the two main outputs of interest (50% isopercentile current and Shannon Criteria at that current level). Based on the insights obtained, the optimal configuration should produce an isopercentile slightly above 0.03mA, and a Shannon Criteria value around -2.2 (the threshold is typically considered to be +1.85, so this can be considered a very safe value).</em></p>
+<h3 id="validation-of-design-parameters-through-full-simulation-pipeline">Validation of Design Parameters through Full Simulation Pipeline</h3>
+<p>In order to validate the chosen design parameters based on the insights provided by the Response Surface Modeling HyperTool, the tool enables to run a parameter configuration of choice to verify that the full simulation results align with predictions.
+To this end, the design parameters considered optimal above will be run, using the tool under <em>Adapt / Extend Sampling</em> - <em>Create new sampling campaign</em> - <em>Test run</em>.</p>
+<p><img alt="Optimal design validation" src="../../assets/MetaModeling_figures/OptimalDesign.png" />
+<em>Pipeline run through the Test Run functionality - which will show in a new tab and in the user's Dashboard. As predicted, this configuration shows both a 50% isopercentile current under 0.05mA and a Shannon Criteria below -2.0, which means it is on the lower (i.e. better) range of the effectivity and safety QoIs simultaneously.</em></p>
+<h2 id="conclusion">Conclusion</h2>
+<p>In this tutorial, we've explored how Response Surface Modeling can transform complex bioelectronic simulations into actionable design insights. Through the Model Intelligence approach, we were able to:</p>
+<ol>
+<li><strong>Analyze complex parameter dependencies</strong> across a multidimensional design space without running thousands of simulations</li>
+<li><strong>Visualize critical relationships</strong> between design parameters (electrode dimensions, spacing, angle) and performance metrics</li>
+<li><strong>Balance competing objectives</strong> of efficacy (lower isopercentile thresholds) and safety (Shannon criteria)</li>
+<li><strong>Make data-driven design decisions</strong> that would be difficult or impossible with traditional parameter sweeps</li>
+</ol>
+<p>The analysis revealed several key insights:
+- Wider angle coverage (around 250°) significantly improves nerve fiber recruitment
+- Larger inter-electrode spacing (1.5mm) reduces stimulation thresholds
+- Electrode length presents a tradeoff between efficacy and safety, with 1mm providing optimal balance
+- Silicone padding (1.5mm) contributes to the overall optimal design</p>
+<p>Most importantly, the surrogate model predictions were validated through full simulation, confirming that our optimized design achieves the desired 50% isopercentile current under 0.05mA while maintaining a Shannon Criteria below -2.0 - well within safety limits.</p>
+<p>This tutorial demonstrates how Model Intelligence tools dramatically accelerate the bioelectronic device design process, reducing computational overhead while providing deeper insights into complex parameter relationships. These techniques represent a paradigm shift in simulation analysis, transforming raw data into actionable knowledge that can directly inform better, safer bioelectronic interventions.</p>
+<h2 id="next-steps">Next Steps</h2>
+<p>For further exploration, we recommend proceeding to our next tutorial that demonstrates how to establish statistically rigorous confidence intervals for the optimal design parameters when accounting for the inherent variability in human tissue properties. </p>
+<p>The <a href="../uncertainty-quantification-tutorial/">Uncertainty Quantification HyperTool</a> provides a robust framework for quantifying output variability - a critical requirement for regulatory submission and clinical translation of bioelectronic devices. This capability allows engineers and researchers to efficiently demonstrate the statistical reliability of their designs across physiologically relevant parameter ranges.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/zurichmedtech" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.sections", "toc.integrate", "search.suggest", "search.highlight", "content.tabs.link", "content.code.annotation", "content.code.copy"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+        <script src="../../js/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
