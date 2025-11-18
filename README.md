@@ -1,49 +1,36 @@
-# s4l-plugins-documentation
-Comprehensive Documentation for the Sim4Life Simulator Plugin Framework
+# Model Intelligence Documentation
+
+Documentation for Sim4Life's Model Intelligence framework - advanced meta-modeling tools that transform computationally intensive simulations into fast, accurate mathematical surrogates for bioelectronic applications.
 
 ## Overview
 
-This repository contains the documentation for the Sim4Life Simulator Plugin Framework. The documentation is built using MkDocs with the Material theme.
+This MkDocs site documents the Model Intelligence HyperTools suite, including Response Surface Modeling (RSM) and Uncertainty Quantification (UQ) capabilities. The framework enables rapid parameter exploration, sensitivity analysis, and design optimization for complex bioelectronic simulations.
 
-## Setup Instructions
-
+## Development Setup
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/s4l-plugins-documentation.git
-   cd s4l-plugins-documentation
+   git clone https://github.com/ZurichMedTech/model-intelligence.git
+   cd model-intelligence
    ```
-
 2. Set up the development environment:
    ```bash
    make devenv
    ```
-   This will create a virtual environment and install all required packages.
 
-## Local Development
+3. Serve documentation locally:
+   ```bash
+   make serve
+   ```
+   Available at `http://0.0.0.0:8001/` with auto-reload enabled.
 
-To serve the documentation locally during development:
-```bash
-make serve
-```
+## Building & Deployment
 
-This will start a local development server at `http://127.0.0.1:8000/` with auto-reload enabled.
-
-## Building the Documentation
-
-To build the documentation site:
+4. Build the documentation:
 ```bash
 make build
 ```
 
-This will create a `site` directory with the built HTML files.
-
-## Deploying to GitHub Pages
-
-Before deploying, make sure to update the repository URL in `mkdocs.yml` with your actual GitHub username:
-- Update `site_url` to `https://yourusername.github.io/s4l-plugins-documentation/`
-- Update `repo_url` to `https://github.com/yourusername/s4l-plugins-documentation`
-
-To deploy the documentation to GitHub Pages:
+5. Deploy to GitHub Pages:
 ```bash
 make gh-deploy
 ```
@@ -52,15 +39,7 @@ This command builds the site and pushes it to the `gh-pages` branch of your repo
 
 ## GitHub Pages Setup
 
-1. Push your repository to GitHub:
-   ```bash
-   git init
-   git add .
-   git commit -m "Initial commit"
-   git branch -M main
-   git remote add origin https://github.com/yourusername/s4l-plugins-documentation.git
-   git push -u origin main
-   ```
+1. Push your latest changes to GitHub
 
 2. Navigate to your repository on GitHub > Settings > Pages:
    - Source: Deploy from a branch
@@ -68,4 +47,4 @@ This command builds the site and pushes it to the `gh-pages` branch of your repo
    - Folder: / (root)
    - Click Save
 
-After deployment, your documentation will be available at `https://yourusername.github.io/s4l-plugins-documentation/`.
+After deployment, the live documentation will be available at: https://ZurichMedTech.github.io/model-intelligence/

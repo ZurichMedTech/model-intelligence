@@ -49,6 +49,7 @@ nav:
     - Response Surface Modeling: manual/response-surface-modeling.md
     - Uncertainty Quantification: manual/uncertainty-quantification.md
   - Tutorials:
+    - Tutorial Overview: tutorials/overview.md
     - Response Surface Modeling Tutorial: tutorials/response-surface-modeling-tutorial.md
     - Uncertainty Quantification Tutorial: tutorials/uncertainty-quantification-tutorial.md
 
