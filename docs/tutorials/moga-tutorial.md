@@ -78,6 +78,9 @@ The MOGA results are primarily visualized through the Pareto frontier plot, whic
 ![MOGA Pareto Front](../assets/MetaModeling_figures/MOGA/MOGA_ParetoFront.png)
 *The Pareto frontier visualization shows the optimal tradeoffs between competing objectives. Each point represents a different optimal design configuration. The frontier reveals that improvements in stimulation efficacy (lower isopercentile threshold) generally require accepting higher safety risks (higher Shannon criteria), demonstrating the fundamental tradeoff inherent in neural stimulation device design. Points along the frontier represent different engineering compromises - from highly conservative designs prioritizing safety to more aggressive designs prioritizing efficacy.*
 
+![MOGA Pareto Front with Weights](../assets/MetaModeling_figures/MOGA/MOGA_ParetoFront_Weights.png)
+*Pareto frontier with detailed solution ranking table showing Pareto optimal designs sorted by weighting criteria. The table displays the complete parameter configurations for each solution, including Inter-Electrode Spacing, Angle Width, Length, Width, and Silicone Padding values. The weighting system enables systematic comparison and selection of solutions based on different priority combinations between safety (Shannon criteria) and efficacy (isopercentile threshold) objectives. This quantitative ranking facilitates data-driven design selection for specific clinical requirements and regulatory constraints.*
+
 ### Interpreting the Results
 
 The Pareto frontier provides several critical insights:
@@ -95,6 +98,26 @@ From the Pareto frontier analysis, engineers can:
 2. **Select designs based on priorities** - choose points emphasizing safety, efficacy, or balanced performance
 3. **Understand design limits** - recognize theoretical bounds on achievable performance
 4. **Guide further optimization** - identify which parameters most strongly influence the tradeoffs
+
+### Comparison with Response Surface Modeling Results
+
+The MOGA optimization results can be directly compared with the optimal design identified through Response Surface Modeling analysis. The RSM tutorial identified a single optimal configuration:
+
+**RSM Optimal Design:**
+- Angle Width: 250º
+- Inter-Electrode Spacing: 1.5mm  
+- Length: 1mm
+- Silicone Padding: 1.5mm
+- Width: (fixed parameter in RSM analysis)
+
+**MOGA Pareto Optimal Solutions:**
+The weighted Pareto frontier table reveals multiple optimal configurations that offer different tradeoffs between safety and efficacy. The MOGA analysis includes electrode Width as an additional optimization parameter, providing a more comprehensive design space exploration. Notably, several MOGA solutions feature similar parameter ranges to the RSM optimum, but with systematic variations that explore the fundamental tradeoff space:
+
+- **Safety-prioritized solutions** typically feature more conservative electrode dimensions
+- **Efficacy-prioritized solutions** optimize for lower stimulation thresholds
+- **Balanced solutions** often align closely with the RSM single-objective optimum
+
+This comparison demonstrates how MOGA provides a comprehensive view of the design space that encompasses and extends beyond single-objective optimization results, revealing the complete landscape of optimal tradeoffs available to engineers.
 
 <!-- ### Design Parameter Analysis
 
